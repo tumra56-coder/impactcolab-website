@@ -11,68 +11,50 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 114 101' fill='none'><circle cx='32.5' cy='62.5' r='29.5' stroke='%23f58220' stroke-width='6'/><rect x='45' y='0' width='60' height='60' rx='8' stroke='%231fb376' stroke-width='6'/></svg>">
   <style>
-    /* ── What We Do ── */
-    .whatwedo {
-      background: var(--dark-green);
-      padding: var(--section-py) var(--pad-x);
-      position: relative;
-      overflow: hidden;
-    }
-    .whatwedo-accent {
-      position: absolute;
-      top: 0; left: 0;
-      height: 3px; width: 6rem;
-      background: linear-gradient(to right, var(--orange), var(--green));
-    }
-    .whatwedo-inner {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .whatwedo-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 2rem;
-    }
-    .whatwedo-heading {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 5vw, 3.2rem);
-      font-weight: 400;
-      letter-spacing: -0.03em;
-      color: white;
-      line-height: 1.15;
-      margin-bottom: 2rem;
-    }
-    .whatwedo-body {
-      font-size: clamp(1rem, 1.8vw, 1.12rem);
-      color: rgba(255,255,255,0.72);
-      line-height: 1.85;
-    }
-    .whatwedo-body p { margin-bottom: 1.25rem; }
-    .whatwedo-body p:last-child { margin-bottom: 0; }
-    .whatwedo-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 2.5rem;
-    }
-    .whatwedo-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--radius-full);
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .whatwedo-link-green { background: var(--green); color: white; }
-    .whatwedo-link-green:hover { background: #1a9d64; transform: translateY(-2px); }
-    .whatwedo-link-outline { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.35); }
-    .whatwedo-link-outline:hover { border-color: white; }
+    <!-- WHAT WE DO -->
+<section class="whatwedo" id="whatwedo">
+  <div class="whatwedo-accent"></div>
+  <div class="whatwedo-inner reveal-scroll">
+    <div class="whatwedo-label">What We Do</div>
+    <h2 class="whatwedo-heading">Decoding complexity<br>into clarity.</h2>
+
+    <div class="whatwedo-grid">
+
+      <div class="whatwedo-text">
+        <div class="whatwedo-body">
+          <p>We work with any organisation with a vision to achieve meaningful change in the world. We help you gain clarity on the change you want to see and how you hope to get there — and equip you with powerful, AI-powered tools that will help you, as a team and as an organisation, grow your understanding of how change happens, evidence it, and tell your powerful story of change.</p>
+          <p>Our philosophy is simple: it's your intelligence that matters. Your collective wisdom, your frontline knowledge, your team's shared understanding of how change happens. <span style="color: var(--orange); font-weight: 600;">Decode Agent</span>, our trained AI evaluation assistant, takes that intelligence and analyses it against our bespoke frameworks to surface clarity, sharpen your thinking, and build a dynamic impact and evidence system your whole team owns.</p>
+          <p>You can work with us directly — through facilitation, evaluation design, and strategic support. Or use The CoLab independently, guided by <span style="color: var(--orange); font-weight: 600;">Decode Agent</span>, at your own pace. Either way, the intelligence at the centre is always yours.</p>
+        </div>
+        <div class="whatwedo-links">
+          <a href="#services" class="whatwedo-link whatwedo-link-green">
+            See what I offer
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#colab" class="whatwedo-link whatwedo-link-outline">
+            Explore The CoLab
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="whatwedo-colab-card">
+        <div class="whatwedo-colab-card-label">The CoLab</div>
+        <div class="whatwedo-colab-card-heading">Your space to learn,<br>adapt and grow.</div>
+        <div class="whatwedo-colab-card-body">
+          The CoLab is your space to embrace experimentation and iteration — to embed feedback and refine your thinking, building a powerful continual learning and reflective process that ensures you are always well-positioned to adapt and respond in any situation.
+          <br><br>
+          Our goal is not just to help you evidence your impact, but to embed impact in your organisation — to help you truly own your identity as a reflective, learning organisation.
+        </div>
+        <a href="#colab" class="whatwedo-colab-card-link">
+          Explore The CoLab
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     /* ── Decode Agent ── */
     .decode-agent {
