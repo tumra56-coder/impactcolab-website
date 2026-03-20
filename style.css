@@ -305,7 +305,7 @@ a { text-decoration: none; color: inherit; }
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--muted);
   line-height: 1.75;
-  max-width: 690px;
+  max-width: 710px;
   margin-bottom: 3rem;
 }
 
