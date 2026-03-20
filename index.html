@@ -3,52 +3,210 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>decodeCoLab — Intelligence. Collaboration. Impact.</title>
-  <meta name="description" content="decodeCoLab partners with NGOs and social enterprises to build clear theories of change and gather compelling evidence of impact. Based in Malawi, working globally." />
+  <title>decodeCoLab — Your intelligence, decoded.</title>
+  <meta name="description" content="decodeCoLab helps NGOs, charities and social enterprises decode their collective intelligence into clear theories of change, compelling evidence, and actionable insight. Based in Malawi, working globally." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Favicon SVG inline -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 114 101' fill='none'><circle cx='32.5' cy='62.5' r='29.5' stroke='%23f58220' stroke-width='6'/><rect x='45' y='0' width='60' height='60' rx='8' stroke='%231fb376' stroke-width='6'/></svg>">
+  <style>
+    /* ── What We Do ── */
+    .whatwedo {
+      background: var(--dark-green);
+      padding: var(--section-py) var(--pad-x);
+      position: relative;
+      overflow: hidden;
+    }
+    .whatwedo-accent {
+      position: absolute;
+      top: 0; left: 0;
+      height: 3px; width: 6rem;
+      background: linear-gradient(to right, var(--orange), var(--green));
+    }
+    .whatwedo-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .whatwedo-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 2rem;
+    }
+    .whatwedo-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 2rem;
+    }
+    .whatwedo-body {
+      font-size: clamp(1rem, 1.8vw, 1.12rem);
+      color: rgba(255,255,255,0.72);
+      line-height: 1.85;
+    }
+    .whatwedo-body p { margin-bottom: 1.25rem; }
+    .whatwedo-body p:last-child { margin-bottom: 0; }
+    .whatwedo-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .whatwedo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .whatwedo-link-green { background: var(--green); color: white; }
+    .whatwedo-link-green:hover { background: #1a9d64; transform: translateY(-2px); }
+    .whatwedo-link-outline { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.35); }
+    .whatwedo-link-outline:hover { border-color: white; }
+
+    /* ── Decode Agent ── */
+    .decode-agent {
+      padding: var(--section-py) var(--pad-x);
+      background: var(--bg);
+    }
+    .decode-agent-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+    .decode-agent-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1.5rem;
+    }
+    .decode-agent-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .decode-agent-tagline {
+      font-size: 1rem;
+      color: var(--orange);
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    .decode-agent-body {
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+      color: var(--muted);
+      line-height: 1.85;
+    }
+    .decode-agent-body p { margin-bottom: 1.25rem; }
+    .decode-agent-body p:last-child { margin-bottom: 0; }
+    .decode-agent-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(0,0,0,0.07);
+      padding: clamp(2rem, 4vw, 2.8rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .decode-agent-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--orange), var(--green));
+    }
+    .decode-agent-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-style: italic;
+      color: var(--fg);
+      line-height: 1.5;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.02em;
+    }
+    .decode-agent-facts { display: flex; flex-direction: column; gap: 0.85rem; }
+    .decode-agent-fact { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+    .decode-agent-fact-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); flex-shrink: 0; margin-top: 0.45rem; }
+
+    /* ── From Field dark ── */
+    .stories-dark { background: var(--dark-green) !important; }
+    .stories-dark .section-heading { color: white; }
+    .stories-dark .section-sub { color: rgba(255,255,255,0.65); }
+    .stories-dark .story-card {
+      background: rgba(255,255,255,0.06) !important;
+      border-color: rgba(255,255,255,0.1) !important;
+    }
+    .stories-dark .story-card h3 { color: white; }
+    .stories-dark .story-card p { color: rgba(255,255,255,0.65); }
+
+    /* ── Who I Am light ── */
+    .about-light {
+      background: var(--bg) !important;
+    }
+    .about-light .about-accent-bar {
+      background: linear-gradient(to right, var(--orange), var(--green));
+    }
+    .about-light .section-heading { color: var(--fg); }
+    .about-light .about-body { color: var(--muted); }
+    .about-light .portrait-frame {
+      background: rgba(0,0,0,0.05) !important;
+    }
+
+    @media (max-width: 900px) {
+      .decode-agent-inner { grid-template-columns: 1fr; }
+      .whatwedo-inner { max-width: 100%; }
+      .about-light .about-grid { grid-template-columns: 1fr; }
+      .about-light .about-portrait { order: -1; max-width: 320px; margin: 0 auto; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       NAV
-  ═══════════════════════════════════════════════════════════ -->
+  <!-- NAV -->
   <header class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <svg class="logo-mark" width="34" height="30" viewBox="-3 -3 114 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="logo-mark" width="34" height="30" viewBox="-3 -3 114 101" fill="none">
           <circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="6" fill="none"/>
           <rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="6" fill="none"/>
         </svg>
         <span class="nav-wordmark">decodeCoLab</span>
       </a>
-
       <nav class="nav-links" id="nav-links">
-        <a href="#about">Who I Am</a>
-        <a href="#services">What I Offer</a>
+        <a href="#whatwedo">What We Do</a>
+        <a href="#colab">The CoLab</a>
         <a href="#stories">From the Field</a>
+        <a href="#about">Who I Am</a>
         <div class="nav-divider"></div>
         <a href="https://app.impactcolab.org/" target="_blank" rel="noopener noreferrer" class="nav-cta">
           Enter the CoLab
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </nav>
-
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-        <span></span><span></span>
-      </button>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span></button>
     </div>
-
-    <!-- Mobile menu -->
     <div class="nav-mobile" id="nav-mobile">
-      <a href="#about" class="nav-mobile-link">Who I Am</a>
-      <a href="#services" class="nav-mobile-link">What I Offer</a>
+      <a href="#whatwedo" class="nav-mobile-link">What We Do</a>
+      <a href="#colab" class="nav-mobile-link">The CoLab</a>
       <a href="#stories" class="nav-mobile-link">From the Field</a>
+      <a href="#about" class="nav-mobile-link">Who I Am</a>
       <a href="https://app.impactcolab.org/" target="_blank" rel="noopener noreferrer" class="nav-mobile-cta">
         Enter the CoLab
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -57,12 +215,8 @@
   </header>
 
 
-  <!-- ═══════════════════════════════════════════════════════════
-       HERO
-  ═══════════════════════════════════════════════════════════ -->
+  <!-- HERO -->
   <section class="hero">
-
-    <!-- Abstract geometric shapes -->
     <div class="hero-shapes" aria-hidden="true">
       <div class="shape shape-orange-rect"></div>
       <div class="shape shape-green-rect"></div>
@@ -74,145 +228,115 @@
       <div class="shape shape-green-circle"></div>
       <div class="shape shape-orange-dot"></div>
     </div>
-
     <div class="hero-content">
       <div class="hero-eyebrow reveal">
         <span class="eyebrow-line"></span>
-        <span>Bee A. · Founder</span>
+        <span>Your intelligence, decoded.</span>
       </div>
-
       <h1 class="hero-headline reveal reveal-delay-1">
         Intelligence.<br>
         <span class="text-green">Collaboration.</span><br>
         Impact.
       </h1>
-
       <p class="hero-sub reveal reveal-delay-2">
-        Creating spaces for meaningful reflection, building practical systems,
-        and helping organisations measure what truly matters.
+        Organisations doing meaningful work are sitting on top of extraordinary
+        collective wisdom. We help you surface it, structure it, and turn it into
+        evidence that drives decisions and demonstrates change.
       </p>
-
       <div class="hero-actions reveal reveal-delay-3">
-        <a href="https://app.impactcolab.org/" target="_blank" rel="noopener noreferrer" class="btn-primary">
-          Enter the CoLab
-          <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="#whatwedo" class="btn-primary">
+          What We Do
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="#services" class="btn-outline">Explore Services</a>
+        <a href="https://app.impactcolab.org/" target="_blank" rel="noopener noreferrer" class="btn-outline">Enter the CoLab</a>
       </div>
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════════════════
-       WHO I AM
-  ═══════════════════════════════════════════════════════════ -->
-  <section class="about" id="about">
-    <div class="about-accent-bar"></div>
-
-    <div class="section-inner">
-      <div class="about-grid">
-
-        <div class="about-text">
-          <h2 class="section-heading text-white reveal-scroll">Who I Am</h2>
-          <div class="about-body reveal-scroll">
-            <p>
-              I am an evaluator and facilitator based in Malawi, deeply embedded
-              in the international development sector. My work is grounded in the
-              belief that evaluation shouldn't just be about reporting to donors —
-              it should be a powerful tool for organisational learning and adaptation.
-            </p>
-            <p>
-              Over the years, I have supported numerous organisations to measure what
-              actually matters, surface genuine insights, and strengthen their practice
-              from the ground up.
-            </p>
-            <p>
-              I am the founder of <strong class="text-orange">decodeCoLab</strong>, a digital
-              platform born from these experiences — currently being tested with
-              local organisations across Malawi to make participatory evaluation
-              accessible and actionable.
-            </p>
-          </div>
-        </div>
-
-        <div class="about-portrait reveal-scroll">
-          <div class="portrait-frame">
-            <!-- Replace src with your actual photo -->
-            <div class="portrait-placeholder">
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.25">
-                <circle cx="40" cy="30" r="18" stroke="white" stroke-width="2"/>
-                <path d="M8 72c0-17.7 14.3-32 32-32s32 14.3 32 32" stroke="white" stroke-width="2"/>
-              </svg>
-              <span>Your photo here</span>
-            </div>
-          </div>
-          <div class="portrait-deco-orange"></div>
-          <div class="portrait-deco-green"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════════════════
-       WHAT I OFFER
-  ═══════════════════════════════════════════════════════════ -->
-  <section class="services" id="services">
-    <div class="section-inner">
-
-      <div class="section-header reveal-scroll">
-        <h2 class="section-heading">What I Offer</h2>
-        <p class="section-sub">
-          Tailored facilitation and evaluation services that prioritise participation,
-          usability, and genuine learning.
+  <!-- WHAT WE DO -->
+  <section class="whatwedo" id="whatwedo">
+    <div class="whatwedo-accent"></div>
+    <div class="whatwedo-inner reveal-scroll">
+      <div class="whatwedo-label">What We Do</div>
+      <h2 class="whatwedo-heading">Decoding complexity<br>into clarity.</h2>
+      <div class="whatwedo-body">
+        <p>
+          Most organisations already have what they need to understand their impact.
+          Years of frontline experience, hard-won insight, and collective wisdom — held
+          by the people closest to the work. The challenge is rarely a lack of intelligence.
+          It's making that intelligence visible, structured, and actionable.
+        </p>
+        <p>
+          decodeCoLab works at that intersection. We combine deep evaluation and facilitation
+          expertise with an AI-powered platform — The CoLab — to help teams decode what they
+          already know into clear theories of change, meaningful evidence, and compelling
+          stories of impact.
+        </p>
+        <p>
+          You can work with us directly — through facilitated sessions, evaluation design,
+          and strategic support. Or you can use The CoLab independently, guided by our
+          AI evaluation assistant, Decode Agent. Either way, the intelligence at the centre
+          of everything is always yours.
         </p>
       </div>
+      <div class="whatwedo-links">
+        <a href="#services" class="whatwedo-link whatwedo-link-green">
+          See what I offer
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#colab" class="whatwedo-link whatwedo-link-outline">
+          Explore The CoLab
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
+
+  <!-- WHAT I OFFER -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <div class="section-header reveal-scroll">
+        <h2 class="section-heading">What I Offer</h2>
+        <p class="section-sub">Tailored facilitation and evaluation services that prioritise participation, genuine learning, and evidence that actually gets used.</p>
+      </div>
       <div class="services-grid">
-
         <div class="service-card reveal-scroll">
           <div class="service-icon service-icon-green">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>Evaluation Design &amp; Facilitation</h3>
-          <p>Designing and facilitating participatory evaluations that surface genuine insights rather than just ticking compliance boxes.</p>
+          <p>Participatory evaluations designed to surface genuine insight — not just compliance. Built around your context, your team, and what you actually need to know.</p>
         </div>
-
         <div class="service-card reveal-scroll">
           <div class="service-icon service-icon-orange">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           </div>
-          <h3>Learning &amp; Reflection</h3>
-          <p>Creating safe, structured spaces for organisations to pause, reflect, learn, and adapt their strategies based on evidence.</p>
+          <h3>Theory of Change &amp; Strategy</h3>
+          <p>Working with teams to make their thinking explicit and structured. Clarifying what you are trying to achieve, why, and the pathway that connects your work to lasting change.</p>
         </div>
-
         <div class="service-card reveal-scroll">
           <div class="service-icon service-icon-green">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>Monitoring &amp; Learning Systems</h3>
-          <p>Building practical, lightweight M&amp;E frameworks that teams actually want to use and that provide meaningful data.</p>
+          <p>Building practical, lightweight M&amp;E frameworks that teams actually want to use — connected to your strategic pathway so measurement is meaningful, not just mandatory.</p>
         </div>
-
         <div class="service-card reveal-scroll">
           <div class="service-icon service-icon-orange">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           </div>
-          <h3>Strategic Facilitation</h3>
-          <p>Expertly guiding strategic conversations, planning sessions, and complex organisational processes to clear outcomes.</p>
+          <h3>AI-Assisted Platform Development</h3>
+          <p>Helping practitioners build their own technology platforms using AI — without a development team. Based on the lived experience of building The CoLab itself.</p>
         </div>
-
       </div>
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════════════════
-       THE PLATFORM
-  ═══════════════════════════════════════════════════════════ -->
-  <section class="platform">
-
+  <!-- THE COLAB -->
+  <section class="platform" id="colab">
     <div class="platform-shapes" aria-hidden="true">
       <div class="pshape pshape-1"></div>
       <div class="pshape pshape-2"></div>
@@ -221,27 +345,28 @@
       <div class="pshape pshape-5"></div>
       <div class="pshape pshape-6"></div>
     </div>
-
     <div class="platform-inner reveal-scroll">
       <div class="platform-label">
         <span class="platform-line platform-line-green"></span>
         <span>The Platform</span>
         <span class="platform-line platform-line-orange"></span>
       </div>
-
       <h2 class="platform-heading">The CoLab</h2>
-
       <p class="platform-sub">
-        A digital platform for participatory evaluation and learning, being tested
-        with organisations across Malawi to change how we measure impact.
+        The CoLab is a structured collaboration environment where teams build their
+        theory of change, map their pathway to impact, and collect evidence of change —
+        all in one place. It brings your team's collective intelligence together and,
+        guided by Decode Agent, turns it into a professional impact pathway and report.
       </p>
-
-      <a href="https://app.impactcolab.org/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-large">
-        Enter the Platform
+      <p class="platform-sub" style="margin-top: 1rem; font-size: clamp(0.9rem, 1.5vw, 1rem);">
+        The CoLab works alongside decodeCoLab facilitation services — or independently,
+        for any organisation ready to map their impact on their own terms.
+      </p>
+      <a href="https://app.impactcolab.org/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-large" style="margin-top: 2.5rem;">
+        Enter the CoLab
         <svg width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-
-      <div class="platform-dots">
+      <div class="platform-dots" style="margin-top: 2.5rem;">
         <span class="pdot pdot-orange"></span>
         <span class="pdot pdot-green"></span>
         <span class="pdot pdot-muted"></span>
@@ -250,76 +375,140 @@
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════════════════
-       FROM THE FIELD
-  ═══════════════════════════════════════════════════════════ -->
-  <section class="stories" id="stories">
-    <div class="section-inner">
-
-      <div class="section-header reveal-scroll">
-        <h2 class="section-heading">From the Field</h2>
-        <p class="section-sub">
-          Reflections, stories, and learnings from testing the CoLab and
-          working with organisations in Malawi.
-        </p>
+  <!-- DECODE AGENT -->
+  <section class="decode-agent" id="decode-agent">
+    <div class="decode-agent-inner">
+      <div class="reveal-scroll">
+        <div class="decode-agent-label">Meet Decode Agent</div>
+        <h2 class="decode-agent-heading">Your AI evaluation assistant.</h2>
+        <p class="decode-agent-tagline">Trained to think like an evaluator. Built to amplify what your team already knows.</p>
+        <div class="decode-agent-body">
+          <p>
+            I'm Decode Agent — the AI at the heart of The CoLab. I've been trained
+            specifically in evaluation methodology, theory of change, and participatory
+            approaches. I know what good evidence looks like. I know how to ask the
+            right questions. And I'm genuinely quite good at turning messy, complicated
+            thinking into something clear and useful.
+          </p>
+          <p>
+            But here's the thing — without your team's collective intelligence, I'm just
+            a very sophisticated blank page. Every insight, every outcome, every story
+            of change that comes out of The CoLab starts with you. I just help decode it.
+          </p>
+          <p>
+            I synthesise your responses into impact pathways, surface assumptions you
+            might not have noticed, ask the questions your team hasn't thought to ask,
+            and embed feedback loops so your organisation keeps learning as the work evolves.
+          </p>
+        </div>
       </div>
-
-      <div class="stories-grid">
-
-        <article class="story-card reveal-scroll">
-          <div class="story-img story-img-1"></div>
-          <div class="story-body">
-            <time class="story-date text-green">October 12, 2024</time>
-            <h3>First Reflections: Testing the CoLab in Blantyre</h3>
-            <p>What happens when you introduce a new digital tool to established M&amp;E workflows? Our first week of testing revealed surprising insights.</p>
-            <span class="story-read text-green">
-              Read Story
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-        </article>
-
-        <article class="story-card reveal-scroll">
-          <div class="story-img story-img-2"></div>
-          <div class="story-body">
-            <time class="story-date text-orange">September 28, 2024</time>
-            <h3>What Participatory Evaluation Looks Like in Practice</h3>
-            <p>Moving beyond the buzzword. Practical steps to ensure the communities we serve actually own the evaluation process.</p>
-            <span class="story-read text-orange">
-              Read Story
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-        </article>
-
-        <article class="story-card reveal-scroll">
-          <div class="story-img story-img-3"></div>
-          <div class="story-body">
-            <time class="story-date text-green">August 15, 2024</time>
-            <h3>Building M&amp;E Capacity with Local NGOs</h3>
-            <p>Reflections on a recent facilitation sprint and why context-specific frameworks always outperform imported templates.</p>
-            <span class="story-read text-green">
-              Read Story
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-        </article>
-
+      <div class="decode-agent-card reveal-scroll">
+        <div class="decode-agent-quote">"The intelligence is yours. I just help you hear yourself think."</div>
+        <div class="decode-agent-facts">
+          <div class="decode-agent-fact"><div class="decode-agent-fact-dot"></div><span>Synthesises your team's collective responses into structured impact pathways</span></div>
+          <div class="decode-agent-fact"><div class="decode-agent-fact-dot"></div><span>Generates outcomes and progress markers grounded in what your team actually said</span></div>
+          <div class="decode-agent-fact"><div class="decode-agent-fact-dot"></div><span>Asks the questions your team might not have thought to ask — about capacity, context, and causality</span></div>
+          <div class="decode-agent-fact"><div class="decode-agent-fact-dot"></div><span>Embeds learning loops so your theory of change evolves as your work does</span></div>
+          <div class="decode-agent-fact"><div class="decode-agent-fact-dot"></div><span>Produces a professional Pathway to Impact report, ready to share with funders</span></div>
+        </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════════════════════ -->
-  <footer class="footer">
+  <!-- FROM THE FIELD -->
+  <section class="stories stories-dark" id="stories">
+    <div class="section-inner">
+      <div class="section-header reveal-scroll">
+        <h2 class="section-heading">From the Field</h2>
+        <p class="section-sub">Reflections, stories, and learnings from testing The CoLab and working with organisations in Malawi and beyond.</p>
+      </div>
+      <div class="stories-grid">
+        <article class="story-card reveal-scroll">
+          <div class="story-img story-img-1"></div>
+          <div class="story-body">
+            <time class="story-date text-green">Coming soon</time>
+            <h3>Your Intelligence, Decoded</h3>
+            <p>What if we have been asking the wrong question about AI? The founding philosophy of decodeCoLab — and why the intelligence was always yours.</p>
+            <span class="story-read text-green">Read Story <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+        <article class="story-card reveal-scroll">
+          <div class="story-img story-img-2"></div>
+          <div class="story-body">
+            <time class="story-date text-orange">Coming soon</time>
+            <h3>How I Built a Platform Without Being a Developer</h3>
+            <p>The origin story of The CoLab — structured thinking, clear frameworks, and AI as a collaborative tool in place of technical expertise.</p>
+            <span class="story-read text-orange">Read Story <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+        <article class="story-card reveal-scroll">
+          <div class="story-img story-img-3"></div>
+          <div class="story-body">
+            <time class="story-date text-green">Coming soon</time>
+            <h3>Participatory Intelligence — A Framework for the AI Age</h3>
+            <p>Where participatory evaluation meets collective intelligence meets AI as amplifier. A concept worth coining — and owning.</p>
+            <span class="story-read text-green">Read Story <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
+
+  <!-- WHO I AM -->
+  <section class="about about-light" id="about">
+    <div class="about-accent-bar"></div>
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-portrait reveal-scroll">
+          <div class="portrait-frame" style="background: rgba(0,0,0,0.05);">
+            <div class="portrait-placeholder">
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.2">
+                <circle cx="40" cy="30" r="18" stroke="#1a1a1a" stroke-width="2"/>
+                <path d="M8 72c0-17.7 14.3-32 32-32s32 14.3 32 32" stroke="#1a1a1a" stroke-width="2"/>
+              </svg>
+              <span style="color: rgba(0,0,0,0.3);">Your photo here</span>
+            </div>
+          </div>
+          <div class="portrait-deco-orange"></div>
+          <div class="portrait-deco-green"></div>
+        </div>
+        <div class="about-text">
+          <h2 class="section-heading reveal-scroll">Who I Am</h2>
+          <div class="about-body reveal-scroll">
+            <p>
+              I am an evaluator and facilitator based in Malawi, deeply embedded
+              in the international development sector. My work is grounded in the
+              belief that evaluation shouldn't just be about reporting to donors —
+              it should be a powerful tool for organisational learning and adaptation.
+            </p>
+            <p>
+              Over the years I have supported numerous organisations to measure what
+              actually matters, surface genuine insights, and strengthen their practice
+              from the ground up. I work with NGOs, charities, social enterprises and
+              independent practitioners — particularly those doing complex work in
+              resource-constrained environments.
+            </p>
+            <p>
+              decodeCoLab grew directly from this practice. The platform exists because
+              of structured thinking, clear frameworks, and AI as a collaborative tool —
+              not because of technical expertise. That process is itself a demonstration
+              of the methodology.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="footer-shapes" aria-hidden="true">
       <div class="fshape fshape-1"></div>
       <div class="fshape fshape-2"></div>
     </div>
-
     <div class="footer-inner">
       <div class="footer-left">
         <div class="footer-logo">
@@ -329,16 +518,12 @@
           </svg>
           <span>decodeCoLab</span>
         </div>
-        <p class="footer-desc">
-          Evaluation and facilitation services designed to surface genuine insights,
-          foster learning, and strengthen practice. Based in Malawi, working globally.
-        </p>
+        <p class="footer-desc">Impact evaluation and facilitation for organisations doing work that matters. Based in Malawi, working globally.</p>
         <a href="mailto:hello@impactcolab.org" class="footer-email">hello@impactcolab.org</a>
       </div>
-
       <div class="footer-right">
         <a href="https://app.impactcolab.org/" target="_blank" rel="noopener noreferrer" class="footer-platform-link">
-          Access the Platform
+          Enter The CoLab
           <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <p class="footer-copy">&copy; <span id="year"></span> decodeCoLab by Bee A. All rights reserved.</p>
