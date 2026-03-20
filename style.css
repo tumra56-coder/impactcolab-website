@@ -261,7 +261,7 @@ a { text-decoration: none; color: inherit; }
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding: calc(var(--section-py) + 0.9rem) var(--pad-x) var(--section-py);
+  padding: calc(var(--section-py) + 0.5rem) var(--pad-x) var(--section-py);
   overflow: hidden;
 }
 
