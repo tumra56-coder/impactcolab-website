@@ -790,8 +790,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .whatwedo-colab-card {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: white;
+  border: 1px solid rgba(0,0,0,0.07);
   border-radius: 16px;
   padding: clamp(1.5rem, 3vw, 2.5rem);
   position: relative;
@@ -819,7 +819,7 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.5vw, 1.9rem);
   font-weight: 400;
-  color: white;
+  color: var(--fg);
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 1.25rem;
@@ -827,7 +827,7 @@ a { text-decoration: none; color: inherit; }
 
 .whatwedo-colab-card-body {
   font-size: 0.92rem;
-  color: rgba(255,255,255,0.68);
+  color: var(--muted);
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
