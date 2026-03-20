@@ -11,149 +11,57 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 114 101' fill='none'><circle cx='32.5' cy='62.5' r='29.5' stroke='%23f58220' stroke-width='6'/><rect x='45' y='0' width='60' height='60' rx='8' stroke='%231fb376' stroke-width='6'/></svg>">
   <style>
-    <!-- WHAT WE DO -->
-<section class="whatwedo" id="whatwedo">
-  <div class="whatwedo-accent"></div>
-  <div class="whatwedo-inner reveal-scroll">
-    <div class="whatwedo-label">What We Do</div>
-    <h2 class="whatwedo-heading">Decoding complexity<br>into clarity.</h2>
-
-    <div class="whatwedo-grid">
-
-      <div class="whatwedo-text">
-        <div class="whatwedo-body">
-          <p>We work with any organisation with a vision to achieve meaningful change in the world. We help you gain clarity on the change you want to see and how you hope to get there — and equip you with powerful, AI-powered tools that will help you, as a team and as an organisation, grow your understanding of how change happens, evidence it, and tell your powerful story of change.</p>
-          <p>Our philosophy is simple: it's your intelligence that matters. Your collective wisdom, your frontline knowledge, your team's shared understanding of how change happens. <span style="color: var(--orange); font-weight: 600;">Decode Agent</span>, our trained AI evaluation assistant, takes that intelligence and analyses it against our bespoke frameworks to surface clarity, sharpen your thinking, and build a dynamic impact and evidence system your whole team owns.</p>
-          <p>You can work with us directly — through facilitation, evaluation design, and strategic support. Or use The CoLab independently, guided by <span style="color: var(--orange); font-weight: 600;">Decode Agent</span>, at your own pace. Either way, the intelligence at the centre is always yours.</p>
-        </div>
-        <div class="whatwedo-links">
-          <a href="#services" class="whatwedo-link whatwedo-link-green">
-            See what I offer
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#colab" class="whatwedo-link whatwedo-link-outline">
-            Explore The CoLab
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="whatwedo-colab-card">
-        <div class="whatwedo-colab-card-label">The CoLab</div>
-        <div class="whatwedo-colab-card-heading">Your space to learn,<br>adapt and grow.</div>
-        <div class="whatwedo-colab-card-body">
-          The CoLab is your space to embrace experimentation and iteration — to embed feedback and refine your thinking, building a powerful continual learning and reflective process that ensures you are always well-positioned to adapt and respond in any situation.
-          <br><br>
-          Our goal is not just to help you evidence your impact, but to embed impact in your organisation — to help you truly own your identity as a reflective, learning organisation.
-        </div>
-        <a href="#colab" class="whatwedo-colab-card-link">
-          Explore The CoLab
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    /* ── Decode Agent ── */
-    .decode-agent {
-      padding: var(--section-py) var(--pad-x);
-      background: var(--bg);
-    }
-    .decode-agent-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: clamp(3rem, 6vw, 6rem);
-      align-items: start;
-    }
-    .decode-agent-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 1.5rem;
-    }
-    .decode-agent-heading {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 400;
-      letter-spacing: -0.03em;
-      color: var(--fg);
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
-    }
-    .decode-agent-tagline {
-      font-size: 1rem;
-      color: var(--orange);
-      font-weight: 600;
-      margin-bottom: 2rem;
-    }
-    .decode-agent-body {
-      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
-      color: var(--muted);
-      line-height: 1.85;
-    }
+    .whatwedo { background: var(--dark-green); padding: var(--section-py) var(--pad-x); position: relative; overflow: hidden; }
+    .whatwedo-accent { position: absolute; top: 0; left: 0; height: 3px; width: 6rem; background: linear-gradient(to right, var(--orange), var(--green)); }
+    .whatwedo-inner { max-width: var(--max-w); margin: 0 auto; }
+    .whatwedo-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 1.25rem; }
+    .whatwedo-heading { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 400; letter-spacing: -0.03em; color: white; line-height: 1.15; margin-bottom: 2.5rem; }
+    .whatwedo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+    .whatwedo-text { display: flex; flex-direction: column; gap: 0; }
+    .whatwedo-body { font-size: clamp(0.95rem, 1.6vw, 1.05rem); color: rgba(255,255,255,0.72); line-height: 1.85; }
+    .whatwedo-body p { margin-bottom: 1.25rem; }
+    .whatwedo-body p:last-child { margin-bottom: 0; }
+    .whatwedo-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+    .whatwedo-link { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.5rem; border-radius: var(--radius-full); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; }
+    .whatwedo-link-green { background: var(--green); color: white; }
+    .whatwedo-link-green:hover { background: #1a9d64; transform: translateY(-2px); }
+    .whatwedo-link-outline { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.35); }
+    .whatwedo-link-outline:hover { border-color: white; }
+    .whatwedo-colab-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: clamp(1.5rem, 3vw, 2.5rem); position: relative; overflow: hidden; }
+    .whatwedo-colab-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--green), var(--orange)); }
+    .whatwedo-colab-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem; }
+    .whatwedo-colab-card-heading { font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 400; color: white; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1.25rem; }
+    .whatwedo-colab-card-body { font-size: 0.92rem; color: rgba(255,255,255,0.68); line-height: 1.8; margin-bottom: 1.5rem; }
+    .whatwedo-colab-card-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--green); text-decoration: none; transition: opacity 0.2s; }
+    .whatwedo-colab-card-link:hover { opacity: 0.75; }
+    .decode-agent { padding: var(--section-py) var(--pad-x); background: var(--bg); }
+    .decode-agent-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(3rem, 6vw, 6rem); align-items: start; }
+    .decode-agent-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.5rem; }
+    .decode-agent-heading { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; letter-spacing: -0.03em; color: var(--fg); line-height: 1.1; margin-bottom: 0.5rem; }
+    .decode-agent-tagline { font-size: 1rem; color: var(--orange); font-weight: 600; margin-bottom: 2rem; }
+    .decode-agent-body { font-size: clamp(0.95rem, 1.5vw, 1.05rem); color: var(--muted); line-height: 1.85; }
     .decode-agent-body p { margin-bottom: 1.25rem; }
     .decode-agent-body p:last-child { margin-bottom: 0; }
-    .decode-agent-card {
-      background: white;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(0,0,0,0.07);
-      padding: clamp(2rem, 4vw, 2.8rem);
-      position: relative;
-      overflow: hidden;
-    }
-    .decode-agent-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(to right, var(--orange), var(--green));
-    }
-    .decode-agent-quote {
-      font-family: var(--font-display);
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
-      font-style: italic;
-      color: var(--fg);
-      line-height: 1.5;
-      margin-bottom: 1.75rem;
-      letter-spacing: -0.02em;
-    }
+    .decode-agent-card { background: white; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.07); padding: clamp(2rem, 4vw, 2.8rem); position: relative; overflow: hidden; }
+    .decode-agent-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--orange), var(--green)); }
+    .decode-agent-quote { font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.35rem); font-style: italic; color: var(--fg); line-height: 1.5; margin-bottom: 1.75rem; letter-spacing: -0.02em; }
     .decode-agent-facts { display: flex; flex-direction: column; gap: 0.85rem; }
     .decode-agent-fact { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
     .decode-agent-fact-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); flex-shrink: 0; margin-top: 0.45rem; }
-
-    /* ── From Field dark ── */
     .stories-dark { background: var(--dark-green) !important; }
     .stories-dark .section-heading { color: white; }
     .stories-dark .section-sub { color: rgba(255,255,255,0.65); }
-    .stories-dark .story-card {
-      background: rgba(255,255,255,0.06) !important;
-      border-color: rgba(255,255,255,0.1) !important;
-    }
+    .stories-dark .story-card { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.1) !important; }
     .stories-dark .story-card h3 { color: white; }
     .stories-dark .story-card p { color: rgba(255,255,255,0.65); }
-
-    /* ── Who I Am light ── */
-    .about-light {
-      background: var(--bg) !important;
-    }
-    .about-light .about-accent-bar {
-      background: linear-gradient(to right, var(--orange), var(--green));
-    }
+    .about-light { background: var(--bg) !important; }
+    .about-light .about-accent-bar { background: linear-gradient(to right, var(--orange), var(--green)); }
     .about-light .section-heading { color: var(--fg); }
     .about-light .about-body { color: var(--muted); }
-    .about-light .portrait-frame {
-      background: rgba(0,0,0,0.05) !important;
-    }
-
+    .about-light .portrait-frame { background: rgba(0,0,0,0.05) !important; }
     @media (max-width: 900px) {
+      .whatwedo-grid { grid-template-columns: 1fr; }
       .decode-agent-inner { grid-template-columns: 1fr; }
-      .whatwedo-inner { max-width: 100%; }
       .about-light .about-grid { grid-template-columns: 1fr; }
       .about-light .about-portrait { order: -1; max-width: 320px; margin: 0 auto; }
     }
@@ -161,7 +69,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <header class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
@@ -196,8 +103,6 @@
     </div>
   </header>
 
-
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-shapes" aria-hidden="true">
       <div class="shape shape-orange-rect"></div>
@@ -221,7 +126,7 @@
         Impact.
       </h1>
       <p class="hero-sub reveal reveal-delay-2">
-      Most organisations are sitting on extraordinary — yet often inaccessible — collective wisdom. The CoLab captures it. Decode Agent — a trained AI evaluation assistant — decodes it and helps you build an integrated impact and data system that lets you tell a powerful, evidenced story of change.
+        Most organisations are sitting on extraordinary — yet often inaccessible — collective wisdom. The CoLab captures it. Decode Agent — a trained AI evaluation assistant — decodes it and helps you build a fully integrated data system that lets you tell a powerful, evidenced story of change.
       </p>
       <div class="hero-actions reveal reveal-delay-3">
         <a href="#whatwedo" class="btn-primary">
@@ -233,33 +138,46 @@
     </div>
   </section>
 
-
-  <!-- WHAT WE DO -->
   <section class="whatwedo" id="whatwedo">
     <div class="whatwedo-accent"></div>
     <div class="whatwedo-inner reveal-scroll">
       <div class="whatwedo-label">What We Do</div>
       <h2 class="whatwedo-heading">Decoding complexity<br>into clarity.</h2>
-      <div class="whatwedo-body">
-        <p>We work with any organisation with a vision to achieve meaningful change in the world. We help you gain clarity on the change you want to see and how you hope to get there — and equip you with powerful, AI-powered tools that will help you, as a team and as an organisation, grow your understanding of how change happens, evidence it, and tell your powerful story of change.</p>
-        <p>Our philosophy is simple: it's your intelligence that matters. Your collective wisdom, your frontline knowledge, your team's shared understanding of how change happens. Decode Agent, our trained AI evaluation assistant, takes that intelligence and analyses it against our bespoke frameworks to surface clarity, sharpen your thinking, and build a dynamic impact and evidence system your whole team owns. The CoLab is your space to embrace experimentation and iteration — to embed feedback and refine your thinking, building a powerful continual learning and reflective process that ensures you are always well-positioned to adapt and respond in any situation. Our goal is not just to help you evidence your impact, but to embed impact in your organisation — to help you truly own your identity as a reflective, learning organisation.</p>
-        <p>You can work with us directly — through facilitation, evaluation design, and strategic support. Or use The CoLab independently, guided by Decode Agent, at your own pace. Either way, the intelligence at the centre is always yours.</p>
-      </div>
-      <div class="whatwedo-links">
-        <a href="#services" class="whatwedo-link whatwedo-link-green">
-          See what I offer
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#colab" class="whatwedo-link whatwedo-link-outline">
-          Explore The CoLab
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <div class="whatwedo-grid">
+        <div class="whatwedo-text">
+          <div class="whatwedo-body">
+            <p>We work with any organisation with a vision to achieve meaningful change in the world. We help you gain clarity on the change you want to see and how you hope to get there — and equip you with powerful, AI-powered tools that will help you, as a team and as an organisation, grow your understanding of how change happens, evidence it, and tell your powerful story of change.</p>
+            <p>Our philosophy is simple: it's your intelligence that matters. Your collective wisdom, your frontline knowledge, your team's shared understanding of how change happens. <span style="color: var(--orange); font-weight: 600;">Decode Agent</span>, our trained AI evaluation assistant, takes that intelligence and analyses it against our bespoke frameworks to surface clarity, sharpen your thinking, and build a dynamic impact and evidence system your whole team owns.</p>
+            <p>You can work with us directly — through facilitation, evaluation design, and strategic support. Or use The CoLab independently, guided by <span style="color: var(--orange); font-weight: 600;">Decode Agent</span>, at your own pace. Either way, the intelligence at the centre is always yours.</p>
+          </div>
+          <div class="whatwedo-links">
+            <a href="#services" class="whatwedo-link whatwedo-link-green">
+              See what I offer
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#colab" class="whatwedo-link whatwedo-link-outline">
+              Explore The CoLab
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="whatwedo-colab-card">
+          <div class="whatwedo-colab-card-label">The CoLab</div>
+          <div class="whatwedo-colab-card-heading">Your space to learn,<br>adapt and grow.</div>
+          <div class="whatwedo-colab-card-body">
+            The CoLab is your space to embrace experimentation and iteration — to embed feedback and refine your thinking, building a powerful continual learning and reflective process that ensures you are always well-positioned to adapt and respond in any situation.
+            <br><br>
+            Our goal is not just to help you evidence your impact, but to embed impact in your organisation — to help you truly own your identity as a reflective, learning organisation.
+          </div>
+          <a href="#colab" class="whatwedo-colab-card-link">
+            Explore The CoLab
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-
-  <!-- WHAT I OFFER -->
   <section class="services" id="services">
     <div class="section-inner">
       <div class="section-header reveal-scroll">
@@ -299,8 +217,6 @@
     </div>
   </section>
 
-
-  <!-- THE COLAB -->
   <section class="platform" id="colab">
     <div class="platform-shapes" aria-hidden="true">
       <div class="pshape pshape-1"></div>
@@ -318,14 +234,10 @@
       </div>
       <h2 class="platform-heading">The CoLab</h2>
       <p class="platform-sub">
-        The CoLab is a structured collaboration environment where teams build their
-        theory of change, map their pathway to impact, and collect evidence of change —
-        all in one place. It brings your team's collective intelligence together and,
-        guided by Decode Agent, turns it into a professional impact pathway and report.
+        The CoLab is a structured collaboration environment where teams build their impact pathway and collect evidence of change — all in one place. It brings your team's collective intelligence together and, guided by Decode Agent, turns it into a professional impact pathway and report.
       </p>
       <p class="platform-sub" style="margin-top: 1rem; font-size: clamp(0.9rem, 1.5vw, 1rem);">
-        The CoLab works alongside decodeCoLab facilitation services — or independently,
-        for any organisation ready to map their impact on their own terms.
+        The CoLab works alongside decodeCoLab facilitation services — or independently, for any organisation ready to map their impact on their own terms.
       </p>
       <a href="https://app.impactcolab.org/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-large" style="margin-top: 2.5rem;">
         Enter the CoLab
@@ -339,8 +251,6 @@
     </div>
   </section>
 
-
-  <!-- DECODE AGENT -->
   <section class="decode-agent" id="decode-agent">
     <div class="decode-agent-inner">
       <div class="reveal-scroll">
@@ -348,23 +258,9 @@
         <h2 class="decode-agent-heading">Your AI evaluation assistant.</h2>
         <p class="decode-agent-tagline">Trained to think like an evaluator. Built to amplify what your team already knows.</p>
         <div class="decode-agent-body">
-          <p>
-            I'm Decode Agent — the AI at the heart of The CoLab. I've been trained
-            specifically in evaluation methodology, theory of change, and participatory
-            approaches. I know what good evidence looks like. I know how to ask the
-            right questions. And I'm genuinely quite good at turning messy, complicated
-            thinking into something clear and useful.
-          </p>
-          <p>
-            But here's the thing — without your team's collective intelligence, I'm just
-            a very sophisticated blank page. Every insight, every outcome, every story
-            of change that comes out of The CoLab starts with you. I just help decode it.
-          </p>
-          <p>
-            I synthesise your responses into impact pathways, surface assumptions you
-            might not have noticed, ask the questions your team hasn't thought to ask,
-            and embed feedback loops so your organisation keeps learning as the work evolves.
-          </p>
+          <p>I'm Decode Agent — the AI at the heart of The CoLab. I've been trained specifically in evaluation methodology, theory of change, and participatory approaches. I know what good evidence looks like. I know how to ask the right questions. And I'm genuinely quite good at turning messy, complicated thinking into something clear and useful.</p>
+          <p>But here's the thing — without your team's collective intelligence, I'm just a very sophisticated blank page. Every insight, every outcome, every story of change that comes out of The CoLab starts with you. I just help decode it.</p>
+          <p>I synthesise your responses into impact pathways, surface assumptions you might not have noticed, ask the questions your team hasn't thought to ask, and embed feedback loops so your organisation keeps learning as the work evolves.</p>
         </div>
       </div>
       <div class="decode-agent-card reveal-scroll">
@@ -380,8 +276,6 @@
     </div>
   </section>
 
-
-  <!-- FROM THE FIELD -->
   <section class="stories stories-dark" id="stories">
     <div class="section-inner">
       <div class="section-header reveal-scroll">
@@ -420,8 +314,6 @@
     </div>
   </section>
 
-
-  <!-- WHO I AM -->
   <section class="about about-light" id="about">
     <div class="about-accent-bar"></div>
     <div class="section-inner">
@@ -442,33 +334,15 @@
         <div class="about-text">
           <h2 class="section-heading reveal-scroll">Who I Am</h2>
           <div class="about-body reveal-scroll">
-            <p>
-              I am an evaluator and facilitator based in Malawi, deeply embedded
-              in the international development sector. My work is grounded in the
-              belief that evaluation shouldn't just be about reporting to donors —
-              it should be a powerful tool for organisational learning and adaptation.
-            </p>
-            <p>
-              Over the years I have supported numerous organisations to measure what
-              actually matters, surface genuine insights, and strengthen their practice
-              from the ground up. I work with NGOs, charities, social enterprises and
-              independent practitioners — particularly those doing complex work in
-              resource-constrained environments.
-            </p>
-            <p>
-              decodeCoLab grew directly from this practice. The platform exists because
-              of structured thinking, clear frameworks, and AI as a collaborative tool —
-              not because of technical expertise. That process is itself a demonstration
-              of the methodology.
-            </p>
+            <p>I am an evaluator and facilitator based in Malawi, deeply embedded in the international development sector. My work is grounded in the belief that evaluation shouldn't just be about reporting to donors — it should be a powerful tool for organisational learning and adaptation.</p>
+            <p>Over the years I have supported numerous organisations to measure what actually matters, surface genuine insights, and strengthen their practice from the ground up. I work with NGOs, charities, social enterprises and independent practitioners — particularly those doing complex work in resource-constrained environments.</p>
+            <p>decodeCoLab grew directly from this practice. The platform exists because of structured thinking, clear frameworks, and AI as a collaborative tool — not because of technical expertise. That process is itself a demonstration of the methodology.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-shapes" aria-hidden="true">
       <div class="fshape fshape-1"></div>
