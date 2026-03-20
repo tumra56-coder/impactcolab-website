@@ -776,3 +776,74 @@ a { text-decoration: none; color: inherit; }
   .stories-grid { max-width: 100%; }
   .footer-right { align-items: flex-start; }
 }
+.whatwedo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.whatwedo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.whatwedo-colab-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.whatwedo-colab-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--green), var(--orange));
+}
+
+.whatwedo-colab-card-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+
+.whatwedo-colab-card-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.whatwedo-colab-card-body {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.whatwedo-colab-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.whatwedo-colab-card-link:hover { opacity: 0.75; }
+
+@media (max-width: 800px) {
+  .whatwedo-grid { grid-template-columns: 1fr; }
+}
