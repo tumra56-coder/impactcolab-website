@@ -424,14 +424,15 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
 }
 .about .section-heading { color: var(--white); }
-.about-body { font-size: 0.95rem; line-height: 1.8; }
+.about-body {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-  line-height: 1.8;
-  color: rgba(255,255,255,0.72);
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: var(--muted);
 }
+.about-body p { margin-bottom: 0; }
 .about-body strong.text-orange { color: var(--orange); font-weight: 600; }
 
 .about-portrait {
