@@ -67,7 +67,10 @@
     }
     @media (max-width: 800px) {
       .platform-inner > div { grid-template-columns: 1fr !important; }
-    }                     
+    }   
+    .reachs-spacer { height: 140px; }
+    @media (max-width: 900px) { .reachs-spacer { display: none; } 
+    }
   </style>
 </head>
 <body>
@@ -329,7 +332,7 @@
 
     <!-- Bubble 4 -->
     <div class="reveal-scroll" style="display:flex; flex-direction:column; height:100%;">
-  <div style="height:140px; flex-shrink:0;"></div>
+  <div class="reachs-spacer"></div>
   <div style="display:flex; align-items:flex-start; gap:12px;">
     <div style="width:36px; height:36px; border-radius:50%; background:#0d3d2a; flex-shrink:0; display:flex; align-items:center; justify-content:center; margin-top:2px;">
       <svg width="20" height="18" viewBox="-3 -3 114 101" fill="none">
