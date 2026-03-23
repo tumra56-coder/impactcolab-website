@@ -424,7 +424,7 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
 }
 .about .section-heading { color: var(--white); }
-.about-body {
+.about-body { font-size: 0.95rem; line-height: 1.8; }
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
