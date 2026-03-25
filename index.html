@@ -69,8 +69,11 @@
       .platform-inner > div { grid-template-columns: 1fr !important; }
     }   
     @media (max-width: 900px) { 
-      .reachs-spacer { height: 140px; }
-      .decode-agent-inner { gap: 1.5rem; }
+      .reachs-spacer { display: none; }
+      .decode-agent-inner { 
+        grid-template-columns: 1fr;
+        gap: 1.5rem; 
+      }
     }
   </style>
 </head>
