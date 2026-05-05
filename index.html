@@ -72,6 +72,12 @@
     .about-light .section-heading { color: var(--fg); }
     .about-light .about-body { color: var(--muted); }
     .about-light .portrait-frame { background: rgba(0,0,0,0.05) !important; }
+    .hero-sub {
+      margin-bottom: 16px; /* adjust this number to taste */
+    }
+    .hero-sub:last-of-type {
+      margin-bottom: 0;
+    }
     @media (max-width: 900px) {
       .whatwedo-grid { grid-template-columns: 1fr; }
       .decode-agent-inner { grid-template-columns: 1fr; }
@@ -87,13 +93,6 @@
         grid-template-columns: 1fr;
         gap: 1.5rem; 
       }
-      .hero-sub {
-      margin-bottom: 16px; /* adjust this number to taste */
-    }
-    
-    .hero-sub:last-of-type {
-      margin-bottom: 0;
-    }
     }
   </style>
 </head>
