@@ -78,6 +78,34 @@
     .hero-sub:last-of-type {
       margin-bottom: 30px;
     }
+    .hero-ai-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0d3d2a;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 7px 16px 7px 12px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+  
+  .ai-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #1fb376;
+    flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
     @media (max-width: 900px) {
       .whatwedo-grid { grid-template-columns: 1fr; }
       .decode-agent-inner { grid-template-columns: 1fr; }
@@ -162,10 +190,10 @@
       <p class="hero-sub reveal reveal-delay-2">
         Clarify your thinking. Build your strategy. Learn, evolve and evidence your impact.
       </p>
-      <p class="hero-sub reveal reveal-delay-2">
-        Together with <strong>Decode AI.</strong>
-      </p>
-      
+      <div class="hero-ai-pill reveal reveal-delay-2">
+        <span class="ai-pulse"></span>
+        Powered by Decode AI
+      </div>
       <div class="hero-actions reveal reveal-delay-3">
         <a href="#whatwedo" class="btn-outline">
           Decode Now
