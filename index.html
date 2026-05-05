@@ -87,6 +87,51 @@
         grid-template-columns: 1fr;
         gap: 1.5rem; 
       }
+      /* Three pillars line */
+    .hero-pillars {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.8s ease 0.65s forwards;
+    }
+ 
+    .pillar {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--green-deep);
+      white-space: nowrap;
+    }
+ 
+    .pillar-sep {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--orange);
+      margin: 0 14px;
+      flex-shrink: 0;
+    }
+ 
+    /* AI badge */
+    .hero-ai {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-deep);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 6px 14px 6px 10px;
+      border-radius: 100px;
+      margin-bottom: 44px;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.8s ease 0.75s forwards;
+    }
     }
   </style>
 </head>
@@ -148,9 +193,8 @@
         <span class="text-green">and CoLab.</span><br>
       </h1>
       <p class="hero-sub reveal reveal-delay-2">
-        <strong>An integrated intelligent system to grow your impact - together. </strong><br>  For startups, NGOs and mission-driven organisations who want to think clearly, act strategically, and evidence what changes.<br>. 
+        <strong>An integrated intelligent system to grow your impact - together. </strong><br>  For startups, NGOs and mission-driven organisations who want to think clearly, act strategically, and evidence what changes.<br>
         <br><br> 
-        Clarify your thinking. Build your strategy for change.<br>
       <strong>Learn, evolve and grow your impact.</strong>
       </p>
       
