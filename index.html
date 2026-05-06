@@ -77,6 +77,7 @@
     }
     .hero-headline {
       margin-top: 0;
+      color: var(--fg);
     }
     .hero-sub {
       margin-bottom: 10px; /* adjust this number to taste */
@@ -156,6 +157,10 @@
         grid-template-columns: 1fr;
         gap: 1.5rem; 
     }
+    @media (max-width: 768px) {
+      .hero-shapes {
+        display: none;
+      }
     }
   </style>
 </head>
