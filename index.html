@@ -283,43 +283,51 @@
       </div>
     </div>
 
-    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+<div style="display: flex; flex-direction: column; gap: 1.25rem;">
 
-      <!-- Decode box -->
-      <div class="whatwedo-colab-card">
-        <div aria-hidden="true" style="position:absolute; inset:0; pointer-events:none; overflow:hidden; border-radius:16px;">
-          <div style="position:absolute; right:-5%; top:-10%; width:160px; height:160px; background:var(--orange); opacity:0.2; transform:rotate(18deg); border-radius:4px;"></div>
-          <div style="position:absolute; left:-5%; bottom:-10%; width:120px; height:120px; background:var(--orange); opacity:0.12; transform:rotate(-12deg); border-radius:4px;"></div>
-        </div>
-        <div class="whatwedo-colab-card-label" style="color: var(--orange);">Decode</div>
-        <div class="whatwedo-colab-card-heading">Your AI thinking partner<br>for strategy and planning.</div>
-        <div class="whatwedo-colab-card-body">
-          Decode helps you clarify your purpose, map your strategy, and unlock everything that follows — your comms, your fundraising, your design, your impact. Guided by Decode AI, a trained strategic analyst, you'll move from scattered thinking to a clear, actionable pathway in a single session.
-        </div>
-        <a href="#decode" class="whatwedo-colab-card-link" style="color: var(--orange);">
-          Start with Decode
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-
-      <!-- The CoLab box -->
-      <div class="whatwedo-colab-card">
-        <div aria-hidden="true" style="position:absolute; inset:0; pointer-events:none; overflow:hidden; border-radius:16px;">
-          <div style="position:absolute; right:-5%; top:-10%; width:160px; height:160px; background:var(--green); opacity:0.25; transform:rotate(18deg); border-radius:4px;"></div>
-          <div style="position:absolute; left:-5%; bottom:-10%; width:120px; height:120px; background:var(--green); opacity:0.18; transform:rotate(-12deg); border-radius:4px;"></div>
-        </div>
-        <div class="whatwedo-colab-card-label">The CoLab</div>
-        <div class="whatwedo-colab-card-heading">The full integrated system —<br>plan, evaluate, reflect, learn.</div>
-        <div class="whatwedo-colab-card-body">
-          The CoLab is a holistic, intelligent platform for organisations serious about impact. It brings together Decode for strategy, Evaluation Lab for evidence, and Story Lab for learning — a complete, connected system that grows with your organisation and embeds impact thinking into everything you do.
-        </div>
-        <a href="#colab" class="whatwedo-colab-card-link">
-          Explore The CoLab
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-
+  <!-- Decode card -->
+  <div style="background: #0d3d2a; border-radius: 16px; padding: clamp(1.5rem, 3vw, 2.25rem); position: relative; overflow: hidden;">
+    <div aria-hidden="true" style="position:absolute; inset:0; pointer-events:none; overflow:hidden; border-radius:16px;">
+      <div style="position:absolute; right:-5%; top:-10%; width:160px; height:160px; background:var(--orange); opacity:0.08; transform:rotate(18deg); border-radius:4px;"></div>
+      <div style="position:absolute; left:-5%; bottom:-10%; width:120px; height:120px; background:var(--orange); opacity:0.06; transform:rotate(-12deg); border-radius:4px;"></div>
     </div>
+    <div style="display:inline-flex; align-items:center; gap:6px; background:var(--orange); color:white; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:1.25rem;">
+      Strategy Planning Tool
+    </div>
+    <div style="font-family:var(--font-display); font-size:clamp(1.3rem, 2.5vw, 1.75rem); font-weight:400; color:white; letter-spacing:-0.02em; line-height:1.2; margin-bottom:1rem;">
+      Map your purpose, build your pathway, unlock everything that follows.
+    </div>
+    <div style="font-size:0.9rem; color:rgba(255,255,255,0.7); line-height:1.8; margin-bottom:1.5rem;">
+      Decode helps you clarify your purpose, map your strategy, and unlock everything that follows — your comms, your fundraising, your design, your impact. From scattered thinking to a structured pathway, in a single session.
+    </div>
+    <a href="#decode" style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.85rem; font-weight:600; color:var(--orange); text-decoration:none; transition:opacity 0.2s;">
+      Start with Decode
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <!-- The CoLab card -->
+  <div style="background: #0d3d2a; border-radius: 16px; padding: clamp(1.5rem, 3vw, 2.25rem); position: relative; overflow: hidden;">
+    <div aria-hidden="true" style="position:absolute; inset:0; pointer-events:none; overflow:hidden; border-radius:16px;">
+      <div style="position:absolute; right:-5%; top:-10%; width:160px; height:160px; background:var(--green); opacity:0.1; transform:rotate(18deg); border-radius:4px;"></div>
+      <div style="position:absolute; left:-5%; bottom:-10%; width:120px; height:120px; background:var(--green); opacity:0.08; transform:rotate(-12deg); border-radius:4px;"></div>
+    </div>
+    <div style="display:inline-flex; align-items:center; gap:6px; background:var(--green); color:white; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:1.25rem;">
+      The Full Integrated System
+    </div>
+    <div style="font-family:var(--font-display); font-size:clamp(1.3rem, 2.5vw, 1.75rem); font-weight:400; color:white; letter-spacing:-0.02em; line-height:1.2; margin-bottom:1rem;">
+      Plan, evaluate, reflect, learn — for organisations serious about impact.
+    </div>
+    <div style="font-size:0.9rem; color:rgba(255,255,255,0.7); line-height:1.8; margin-bottom:1.5rem;">
+      The CoLab is a holistic, intelligent platform that brings together Decode for strategy, Evaluation Lab for evidence, and Story Lab for learning — one complete, connected system that grows with your organisation and embeds impact thinking into everything you do.
+    </div>
+    <a href="#colab" style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.85rem; font-weight:600; color:var(--green); text-decoration:none; transition:opacity 0.2s;">
+      Explore The CoLab
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+</div>
   </div>
 </div>
   </section>
