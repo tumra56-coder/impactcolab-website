@@ -106,7 +106,13 @@
 .pillar-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--orange); margin: 0 14px; flex-shrink: 0; }
 .ai-pulse { width: 8px; height: 8px; border-radius: 50%; background: #1fb376; flex-shrink: 0; animation: pulse 2s ease-in-out infinite; }
 .card-label-mobile { display: none; }
-
+.about-dark { background: var(--dark-green) !important; }
+.about-dark .about-accent-bar { background: linear-gradient(to right, var(--orange), var(--green)); }
+.about-dark h2 { color: white; }
+.about-dark p { color: rgba(255,255,255,0.72); }
+.about-dark .portrait-frame { background: rgba(255,255,255,0.08) !important; }
+.about-dark span { color: rgba(255,255,255,0.4); }
+    
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(0.8); }
@@ -152,7 +158,8 @@
       </a>
       <nav class="nav-links" id="nav-links">
         <a href="#whatwedo">What</a>
-        <a href="#colab">The CoLab</a>
+        <a href="#decode-ai">Meet Decode AI</a>
+        <a href="#tools">Our Tools</a>
         <a href="#stories">From the Field</a>
         <a href="#about">Who</a>
         <div class="nav-divider"></div>
@@ -199,7 +206,7 @@
       </h1>
        </p>
        <p class="hero-sub reveal reveal-delay-2">
-        For startups, NGOs and mission-driven organisations who want to think clearly, act strategically, and evidence  what changes. Harnessing the power of human intelligence.
+        For startups, NGOs and mission-driven organisations who want to think clearly, act strategically, and evidence  what changes. Harnessing the power of human intelligence to grow their impact.
       </p>
       <div class="hero-pillars reveal reveal-delay-2">
         <span class="pillar">Strategise</span>
@@ -385,7 +392,46 @@
   </div>
 </section>
 
-  <section class="about about-light" id="about">
+      <section class="stories" id="stories">
+    <div class="section-inner">
+      <div class="section-header reveal-scroll">
+        <h2 class="section-heading">From the Field</h2>
+        <p class="section-sub">Reflections, stories, and learnings from testing The CoLab and working with organisations in Malawi and beyond.</p>
+      </div>
+      <div class="stories-grid">
+        <article class="story-card reveal-scroll">
+          <div class="story-img story-img-1"></div>
+          <div class="story-body">
+            <time class="story-date text-green">Coming soon</time>
+            <h3>Your Insight, Decoded</h3>
+            <p>What if we have been asking the wrong question about AI? The founding philosophy of decodeCoLab — and why the intelligence was always yours.</p>
+            <span class="story-read text-green">Read Story <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+        <article class="story-card reveal-scroll">
+          <div class="story-img story-img-2"></div>
+          <div class="story-body">
+            <time class="story-date text-orange">Coming soon</time>
+            <h3>How I Built a Platform Without Being a Developer</h3>
+            <p>The origin story of The CoLab — structured thinking, clear frameworks, and AI as a collaborative tool in place of technical expertise.</p>
+            <span class="story-read text-orange">Read Story <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+        <article class="story-card reveal-scroll">
+          <div class="story-img story-img-3"></div>
+          <div class="story-body">
+            <time class="story-date text-green">Coming soon</time>
+            <h3>Participatory Intelligence — A Framework for the AI Age</h3>
+            <p>Where participatory evaluation meets collective intelligence meets AI as amplifier. A concept worth coining — and owning.</p>
+            <span class="story-read text-green">Read Story <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+      
+  <section class="about about-dark" id="about">
   <div class="about-accent-bar"></div>
   <div class="section-inner">
 
