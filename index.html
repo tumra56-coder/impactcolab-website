@@ -199,14 +199,23 @@
           gap: 0.75rem;
         }
       }
-        @media (max-width: 768px) {
-        .btn-outline,
-        .btn-primary {
-          font-size: 0.8rem;
-          padding: 0.6rem 1rem;
-        }
+    @media (max-width: 768px) {
+      .btn-outline,
+      .btn-primary {
+        font-size: 0.8rem;
+        padding: 0.6rem 1rem;
       }
+      .card-labels {
+        display: none;
       }
+      .card-label-mobile {
+        display: block;
+      }
+    }
+    
+    .card-label-mobile {
+      display: none;
+    }
     }
   </style>
 </head>
@@ -336,23 +345,25 @@
 </section>
 
   <!-- Card labels -->
+  <div class="card-labels" style="background: rgba(13,61,42,0.06); padding: 2rem var(--pad-x) 0;">  
     <div style="background: rgba(13,61,42,0.06); padding: 2rem var(--pad-x) 0;">
-      <div style="max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-        <div style="padding: 0 0.5rem;">
-          <div style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--orange);">1 — Your Entry Point</div>
-        </div>
-        <div style="padding: 0 0.5rem;">
-          <div style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--green);">2 — The Full Journey</div>
+        <div style="max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <div style="padding: 0 0.5rem;">
+            <div style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--orange);">1 — Your Entry Point</div>
+          </div>
+          <div style="padding: 0 0.5rem;">
+            <div style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--green);">2 — The Full Journey</div>
+          </div>
         </div>
       </div>
-    </div>
   
 <!-- Product cards — float freely on page background -->
-<div style="background: rgba(13,61,42,0.06); padding: 1rem var(--pad-x) 6rem;">
+<div style="background: rgba(13,61,42,0.06); padding: 1rem var(--pad-x) 5rem;">
   <div style="max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
     
     <!-- Decode card -->
     <div style="background: white; border-radius: 16px; padding: clamp(2rem, 3vw, 3rem); position: relative; overflow: hidden; border-top: 4px solid var(--orange);">
+      <div class="card-label-mobile" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--orange); margin-bottom:1rem;">1 — Your Entry Point</div>
       <div style="font-family:var(--font-display); font-size:clamp(1.4rem, 2.5vw, 1.9rem); font-weight:400; color:var(--fg); letter-spacing:-0.02em; line-height:1.2; margin-bottom:1rem;">
         The Decode Studio — Your Strategy Planning Tool.
       </div>
@@ -370,7 +381,8 @@
 
   <!-- CoLab card -->
     <div style="background: white; border-radius: 16px; padding: clamp(2rem, 3vw, 3rem); position: relative; overflow: hidden; border-top: 4px solid var(--green);">
-     <div style="font-family:var(--font-display); font-size:clamp(1.4rem, 2.5vw, 1.9rem); font-weight:400; color:var(--fg); letter-spacing:-0.02em; line-height:1.2; margin-bottom:1rem;">
+     <div class="card-label-mobile" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--green); margin-bottom:1rem;">2 — The Full Journey</div>
+      <div style="font-family:var(--font-display); font-size:clamp(1.4rem, 2.5vw, 1.9rem); font-weight:400; color:var(--fg); letter-spacing:-0.02em; line-height:1.2; margin-bottom:1rem;">
         The CoLab — The Full Integrated System.
       </div>
       <div style="font-size:1rem; font-weight:600; color:var(--green); margin-bottom:1.25rem; line-height:1.4;">
