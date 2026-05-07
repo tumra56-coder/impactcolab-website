@@ -1,1 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Decode Studio — Your Strategy Planning Tool | decodeCoLab</title>
+  <meta name="description" content="The Decode Studio helps startups, NGOs and mission-driven organisations build a shared vision, map their pathway to impact, and unlock everything that follows. Four steps. One shared compass." />
+  <link rel="canonical" href="https://decodecolab.com/decode-studio" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 114 101' fill='none'><circle cx='32.5' cy='62.5' r='29.5' stroke='%23f58220' stroke-width='6'/><rect x='45' y='0' width='60' height='60' rx='8' stroke='%231fb376' stroke-width='6'/></svg>">
+  <style>
 
+    /* ── Page base ── */
+    .ds-page { background: var(--bg); }
+
+    /* ── Hero ── */
+    .ds-hero {
+      background: var(--bg);
+      padding: 120px var(--pad-x) 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ds-hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .ds-hero-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .ds-hero-eyebrow-line {
+      width: 2rem;
+      height: 2px;
+      background: var(--orange);
+      flex-shrink: 0;
+    }
+    .ds-hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .ds-hero-headline em {
+      font-style: italic;
+      color: var(--orange);
+    }
+    .ds-hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+    }
+    .ds-hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .ds-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--orange);
+      color: white;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .ds-btn-primary:hover { background: #e07318; transform: translateY(-2px); }
+    .ds-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      border: 1.5px solid rgba(0,0,0,0.15);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .ds-btn-secondary:hover { border-color: var(--fg); transform: translateY(-2px); }
+
+    /* Hero right — visual card */
+    .ds-hero-visual {
+      background: var(--dark-green);
+      border-radius: 24px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .ds-hero-visual::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--orange), var(--green));
+    }
+    .ds-visual-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1.5rem;
+    }
+    .ds-visual-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .ds-visual-step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .ds-visual-step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--orange);
+      color: white;
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .ds-visual-step-num.green { background: var(--green); }
+    .ds-visual-step-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: white;
+    }
+    .ds-visual-step-sub {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 2px;
+    }
+    .ds-visual-arrow {
+      display: flex;
+      justify-content: center;
+      color: rgba(255,255,255,0.25);
+      margin: -0.25rem 0;
+    }
+
+    /* ── Who it's for ── */
+    .ds-for {
+      background: var(--dark-green);
+      padding: var(--section-py) var(--pad-x);
+    }
+    .ds-for-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .ds-for-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+    .ds-for-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 3rem;
+    }
+    .ds-for-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .ds-for-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 1.75rem;
+    }
+    .ds-for-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(245,130,32,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .ds-for-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    .ds-for-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+    }
+
+    /* ── Four Steps ── */
+    .ds-steps {
+      background: var(--bg);
+      padding: var(--section-py) var(--pad-x);
+    }
+    .ds-steps-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .ds-steps-header {
+      margin-bottom: 3.5rem;
+    }
+    .ds-steps-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .ds-steps-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .ds-steps-sub {
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 600px;
+    }
+    .ds-steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .ds-step-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem 2.25rem;
+      border: 1px solid rgba(0,0,0,0.07);
+      position: relative;
+      overflow: hidden;
+    }
+    .ds-step-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .ds-step-card.orange::before { background: var(--orange); }
+    .ds-step-card.green::before { background: var(--green); }
+    .ds-step-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .ds-step-num.orange { color: var(--orange); }
+    .ds-step-num.green { color: var(--green); }
+    .ds-step-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .ds-step-icon.orange { background: #fff3e8; }
+    .ds-step-icon.green { background: #ecfdf5; }
+    .ds-step-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--fg);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .ds-step-card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    /* ── Pricing ── */
+    .ds-pricing {
+      background: var(--dark-green);
+      padding: var(--section-py) var(--pad-x);
+    }
+    .ds-pricing-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .ds-pricing-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+    .ds-pricing-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 3rem;
+    }
+    .ds-pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .ds-pricing-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .ds-pricing-card.featured {
+      background: white;
+      border-color: white;
+    }
+    .ds-pricing-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .ds-pricing-card.featured .ds-pricing-card-label { color: var(--orange); }
+    .ds-pricing-card:not(.featured) .ds-pricing-card-label { color: rgba(255,255,255,0.6); }
+    .ds-pricing-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .ds-pricing-card.featured .ds-pricing-name { color: var(--fg); }
+    .ds-pricing-card:not(.featured) .ds-pricing-name { color: white; }
+    .ds-pricing-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.25rem;
+      line-height: 1;
+    }
+    .ds-pricing-card.featured .ds-pricing-price { color: var(--orange); }
+    .ds-pricing-card:not(.featured) .ds-pricing-price { color: white; }
+    .ds-pricing-period {
+      font-size: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+    .ds-pricing-card.featured .ds-pricing-period { color: var(--muted); }
+    .ds-pricing-card:not(.featured) .ds-pricing-period { color: rgba(255,255,255,0.5); }
+    .ds-pricing-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .ds-pricing-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .ds-pricing-card.featured .ds-pricing-feature { color: var(--muted); }
+    .ds-pricing-card:not(.featured) .ds-pricing-feature { color: rgba(255,255,255,0.7); }
+    .ds-pricing-check {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .ds-pricing-card.featured .ds-pricing-check { background: #ecfdf5; }
+    .ds-pricing-card:not(.featured) .ds-pricing-check { background: rgba(31,179,118,0.2); }
+    .ds-pricing-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      width: 100%;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .ds-pricing-card.featured .ds-pricing-cta {
+      background: var(--orange);
+      color: white;
+    }
+    .ds-pricing-card.featured .ds-pricing-cta:hover { background: #e07318; }
+    .ds-pricing-card:not(.featured) .ds-pricing-cta {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .ds-pricing-card:not(.featured) .ds-pricing-cta:hover { background: rgba(255,255,255,0.18); }
+    .ds-pricing-note {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    /* ── Decode AI teaser ── */
+    .ds-ai {
+      background: var(--bg);
+      padding: var(--section-py) var(--pad-x);
+    }
+    .ds-ai-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    .ds-ai-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .ds-ai-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .ds-ai-body {
+      font-size: clamp(0.92rem, 1.5vw, 1rem);
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+    .ds-ai-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--orange);
+      text-decoration: none;
+    }
+    .ds-ai-bubbles {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .ds-ai-bubble {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .ds-ai-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #0d3d2a;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .ds-ai-bubble-text {
+      background: white;
+      border: 1.5px solid #1fb376;
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      color: #333;
+      line-height: 1.75;
+      flex: 1;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    /* ── Final CTA ── */
+    .ds-cta {
+      background: var(--orange);
+      padding: var(--section-py) var(--pad-x);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ds-cta::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      pointer-events: none;
+    }
+    .ds-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .ds-cta-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .ds-cta-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .ds-cta-sub {
+      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+      color: rgba(255,255,255,0.8);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+    .ds-cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .ds-cta-btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      color: var(--orange);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .ds-cta-btn-white:hover { background: #fff3e8; transform: translateY(-2px); }
+    .ds-cta-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: white;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      transition: all 0.2s;
+    }
+    .ds-cta-btn-outline:hover { border-color: white; transform: translateY(-2px); }
+    .ds-cta-note {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 1.5rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .ds-hero-inner { grid-template-columns: 1fr; }
+      .ds-hero-visual { display: none; }
+      .ds-for-grid { grid-template-columns: 1fr; }
+      .ds-steps-grid { grid-template-columns: 1fr; }
+      .ds-pricing-grid { grid-template-columns: 1fr; }
+      .ds-ai-inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .ds-hero { padding: 100px var(--pad-x) 60px; }
+      .ds-hero-actions { flex-direction: column; }
+      .ds-btn-primary, .ds-btn-secondary { justify-content: center; width: 100%; }
+      .ds-cta-actions { flex-direction: column; align-items: center; }
+      .ds-cta-btn-white, .ds-cta-btn-outline { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body class="ds-page">
+
+  <!-- Nav — same as main site -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg class="logo-mark" width="34" height="30" viewBox="-3 -3 114 101" fill="none">
+          <circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="6" fill="none"/>
+          <rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="6" fill="none"/>
+        </svg>
+        <span class="nav-wordmark">decodeCoLab</span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html#whatwedo">What</a>
+        <a href="index.html#decode-ai">Meet Decode AI</a>
+        <a href="index.html#tools">Our Tools</a>
+        <a href="index.html#about">Who</a>
+        <div class="nav-divider"></div>
+        <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="nav-cta">
+          Enter the CoLab
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="index.html#whatwedo" class="nav-mobile-link">What</a>
+      <a href="index.html#decode-ai" class="nav-mobile-link">Meet Decode AI</a>
+      <a href="index.html#tools" class="nav-mobile-link">Our Tools</a>
+      <a href="index.html#about" class="nav-mobile-link">Who</a>
+      <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="nav-mobile-cta">
+        Enter the CoLab
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="ds-hero">
+    <div class="ds-hero-inner">
+      <div>
+        <div class="ds-hero-eyebrow">
+          <span class="ds-hero-eyebrow-line"></span>
+          Your Strategy Planning Tool
+        </div>
+        <h1 class="ds-hero-headline">
+          Decode your purpose.<br>
+          <em>Map your pathway.</em><br>
+          Unlock your impact.
+        </h1>
+        <p class="ds-hero-sub">The Decode Studio helps startups, NGOs and mission-driven organisations build a shared vision for change, map a clear strategy, and generate the unifying foundations for everything that follows — guided by Decode AI every step of the way.</p>
+        <div class="ds-hero-actions">
+          <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="ds-btn-primary">
+            Start with The Decode Studio
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:hello@decodecolab.com?subject=Facilitated session enquiry" class="ds-btn-secondary">
+            Book a facilitated session
+          </a>
+        </div>
+      </div>
+      <div class="ds-hero-visual">
+        <div class="ds-visual-label">The Decode Studio — Four Steps</div>
+        <div class="ds-visual-steps">
+          <div class="ds-visual-step">
+            <div class="ds-visual-step-num">1</div>
+            <div>
+              <div class="ds-visual-step-text">Think Lab</div>
+              <div class="ds-visual-step-sub">Explore your vision and values</div>
+            </div>
+          </div>
+          <div class="ds-visual-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="ds-visual-step">
+            <div class="ds-visual-step-num">2</div>
+            <div>
+              <div class="ds-visual-step-text">Change Map</div>
+              <div class="ds-visual-step-sub">Connect activities to change</div>
+            </div>
+          </div>
+          <div class="ds-visual-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="ds-visual-step">
+            <div class="ds-visual-step-num green">3</div>
+            <div>
+              <div class="ds-visual-step-text">Smart Outcomes</div>
+              <div class="ds-visual-step-sub">AI-generated trackable outcomes</div>
+            </div>
+          </div>
+          <div class="ds-visual-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="ds-visual-step">
+            <div class="ds-visual-step-num green">4</div>
+            <div>
+              <div class="ds-visual-step-text">Impact Blueprint</div>
+              <div class="ds-visual-step-sub">Your complete strategy document</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="ds-for">
+    <div class="ds-for-inner">
+      <div class="ds-for-label">Who it's for</div>
+      <h2 class="ds-for-heading">Built for organisations<br>with a mission to fulfil.</h2>
+      <div class="ds-for-grid">
+        <div class="ds-for-card">
+          <div class="ds-for-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#f58220" stroke-width="2" stroke-linecap="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#f58220" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Startups and founders</h3>
+          <p>You have a bold idea and a clear sense of purpose. The Decode Studio helps you translate that into a coherent strategy your team and your funders can get behind.</p>
+        </div>
+        <div class="ds-for-card">
+          <div class="ds-for-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f58220" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="#f58220" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>NGOs and charities</h3>
+          <p>Your team is doing extraordinary work. The Decode Studio helps you articulate how it creates change, build shared ownership of your strategy, and evidence your impact more clearly.</p>
+        </div>
+        <div class="ds-for-card">
+          <div class="ds-for-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#f58220" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#f58220" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#f58220" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Mission-driven teams</h3>
+          <p>Whether you are revisiting your direction or aligning a growing team around a shared vision, The Decode Studio brings everyone into the same conversation and builds something you all own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Four Steps -->
+  <section class="ds-steps">
+    <div class="ds-steps-inner">
+      <div class="ds-steps-header">
+        <div class="ds-steps-label">How it works</div>
+        <h2 class="ds-steps-heading">Four steps.<br>One shared compass.</h2>
+        <p class="ds-steps-sub">Each step is guided by Decode AI, which draws out your team's collective thinking, structures it against our bespoke frameworks, and builds it into something clear, actionable and owned by your whole organisation.</p>
+      </div>
+      <div class="ds-steps-grid">
+        <div class="ds-step-card orange">
+          <div class="ds-step-num orange">Step 1</div>
+          <div class="ds-step-icon orange">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#f58220" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Think Lab</h3>
+          <p>Your team explores your vision, your values, and the change you want to see in the world. Guided by Decode AI, your collective thinking is surfaced, structured and synthesised into the foundations of your strategy. No jargon, no templates — just your own intelligence, decoded.</p>
+        </div>
+        <div class="ds-step-card orange">
+          <div class="ds-step-num orange">Step 2</div>
+          <div class="ds-step-icon orange">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f58220" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="#f58220" stroke-width="1.8"/></svg>
+          </div>
+          <h3>Change Map</h3>
+          <p>Connect your activities to the change you want to see. Map the journey from what you do to the difference it makes, building a shared understanding of how your work drives impact across your whole team. A living picture of your pathway to change.</p>
+        </div>
+        <div class="ds-step-card green">
+          <div class="ds-step-num green">Step 3</div>
+          <div class="ds-step-icon green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Smart Outcomes</h3>
+          <p>Decode AI synthesises your team's inputs into clear, trackable outcomes across six domains of change, using our proprietary REACHS framework. The result is a robust, evidence-ready outcomes framework that your whole organisation can work towards and measure against.</p>
+        </div>
+        <div class="ds-step-card green">
+          <div class="ds-step-num green">Step 4</div>
+          <div class="ds-step-icon green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round"/><polyline points="14,2 14,8 20,8" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round"/><line x1="16" y1="13" x2="8" y2="13" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round"/><line x1="16" y1="17" x2="8" y2="17" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Impact Blueprint</h3>
+          <p>Decode AI generates your Impact Blueprint, a complete document capturing your shared strategy, outcomes and organisational language. The unifying foundation for your communications, funding applications, design thinking and impact strategy. One document. Everything that follows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="ds-pricing">
+    <div class="ds-pricing-inner">
+      <div class="ds-pricing-label">Pricing</div>
+      <h2 class="ds-pricing-heading">Simple, transparent pricing.</h2>
+      <div class="ds-pricing-grid">
+
+        <div class="ds-pricing-card featured">
+          <div class="ds-pricing-card-label">Self-guided</div>
+          <div class="ds-pricing-name">The Decode Studio</div>
+          <div class="ds-pricing-price">TBC</div>
+          <div class="ds-pricing-period">One-off access fee</div>
+          <div class="ds-pricing-features">
+            <div class="ds-pricing-feature">
+              <div class="ds-pricing-check">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              Full access to all four Decode Studio steps
+            </div>
+            <div class="ds-pricing-feature">
+              <div class="ds-pricing-check">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              Guided throughout by Decode AI
+            </div>
+            <div class="ds-pricing-feature">
+              <div class="ds-pricing-check">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              Downloadable Impact Blueprint
+            </div>
+            <div class="ds-pricing-feature">
+              <div class="ds-pricing-check">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              Unlimited team members
+            </div>
+            <div class="ds-pricing-feature">
+              <div class="ds-pricing-check">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              Complete at your own pace
+            </div>
+          </div>
+          <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="ds-pricing-cta">
+            Start with The Decode Studio
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="ds-pricing-card">
+          <div class="ds-pricing-card-label">Facilitated</div>
+          <div class="ds-pricing-name">With Bouchra</div>
+          <div class="ds-pricing-price">POA</div>
+          <div class="ds-pricing-period">Bespoke to your organisation</div>
+          <div class="ds-pricing-features">
+            <div class="ds-pricing-feature">
+              <div class="ds-pricing-check">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              Everything in the self-guided version
+            </div>
+            <div class="ds-pricing-feature">
+              <div class="ds-pricing-check">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              Facilitated team workshop with Bouchra
+            </div>
+            <div class="ds-pricing-feature">
+              <div class="ds-pricing-check">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              Strategic support and guidance
+            </div>
+            <div class="ds-pricing-feature">
+              <div class="ds-pricing-check">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              Online or in person
+            </div>
+            <div class="ds-pricing-feature">
+              <div class="ds-pricing-check">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              Follow-up review session included
+            </div>
+          </div>
+          <a href="mailto:hello@decodecolab.com?subject=Facilitated session enquiry" class="ds-pricing-cta">
+            Get in touch
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+      </div>
+      <p class="ds-pricing-note">Malawian organisations participating in our pilot programme access The Decode Studio free of charge.</p>
+    </div>
+  </section>
+
+  <!-- Decode AI teaser -->
+  <section class="ds-ai">
+    <div class="ds-ai-inner">
+      <div>
+        <div class="ds-ai-label">Powered by Decode AI</div>
+        <h2 class="ds-ai-heading">Your AI strategic thinker is with you every step.</h2>
+        <p class="ds-ai-body">Decode AI has been trained in strategy, organisational development, impact measurement, learning systems and our own proprietary REACHS framework. It guides your team through every step of The Decode Studio, asking the right questions, surfacing the right insights, and building something that truly belongs to you.</p>
+        <p class="ds-ai-body">It doesn't generate generic strategies. It draws out your team's collective intelligence and turns it into something clear, structured and owned by your whole organisation.</p>
+        <a href="meet-decode.html" class="ds-ai-link">
+          Meet Decode AI
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="ds-ai-bubbles">
+        <div class="ds-ai-bubble">
+          <div class="ds-ai-avatar">
+            <svg width="20" height="18" viewBox="-3 -3 114 101" fill="none">
+              <circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="8" fill="none"/>
+              <rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="8" fill="none"/>
+            </svg>
+          </div>
+          <div class="ds-ai-bubble-text">I don't generate generic strategies. I work with what your team already knows, asking questions, listening carefully, and building something that belongs to you. The intelligence was always yours. I just help decode it.</div>
+        </div>
+        <div class="ds-ai-bubble">
+          <div class="ds-ai-avatar">
+            <svg width="20" height="18" viewBox="-3 -3 114 101" fill="none">
+              <circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="8" fill="none"/>
+              <rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="8" fill="none"/>
+            </svg>
+          </div>
+          <div class="ds-ai-bubble-text">Whether you are a startup finding your feet or an established organisation ready to sharpen your direction, I meet you where you are and help you build a strategy your whole team believes in.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="ds-cta">
+    <div class="ds-cta-inner">
+      <h2 class="ds-cta-heading">Ready to decode your strategy?</h2>
+      <p class="ds-cta-sub">Start with The Decode Studio and move from scattered purpose to a shared strategic compass. Try it yourself guided by Decode AI, or work with Bouchra directly for a facilitated session.</p>
+      <div class="ds-cta-actions">
+        <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="ds-cta-btn-white">
+          Start with The Decode Studio
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="mailto:hello@decodecolab.com?subject=Facilitated session enquiry" class="ds-cta-btn-outline">
+          Book a facilitated session
+        </a>
+      </div>
+      <p class="ds-cta-note">You'll be taken to The CoLab platform. Select The Decode Studio to get started.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-shapes" aria-hidden="true">
+      <div class="fshape fshape-1"></div>
+      <div class="fshape fshape-2"></div>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <svg width="34" height="30" viewBox="-3 -3 114 101" fill="none">
+            <circle cx="32.5" cy="62.5" r="29.5" stroke="rgba(245,130,32,0.7)" stroke-width="6" fill="none"/>
+            <rect x="45" y="0" width="60" height="60" rx="8" stroke="rgba(31,179,118,0.7)" stroke-width="6" fill="none"/>
+          </svg>
+          <span>decodeCoLab</span>
+        </div>
+        <p class="footer-desc">Impact evaluation and facilitation for organisations doing work that matters. Based in Malawi, working globally.</p>
+        <a href="mailto:hello@decodecolab.com" class="footer-email">hello@decodecolab.com</a>
+      </div>
+      <div class="footer-right">
+        <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="footer-platform-link">
+          Enter The CoLab
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="footer-copy">&copy; <span id="year"></span> decodeCoLab by Bouchra Atkinson. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
