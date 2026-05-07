@@ -324,33 +324,34 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
 }
 .shape { position: absolute; border-radius: 4px; }
+
 .shape-orange-rect {
-  right: 4%; top: 5%;
+  right: 6%; top: 40%;
   width: clamp(180px, 24vw, 340px);
   height: clamp(170px, 23vw, 320px);
   background: var(--orange);
-  opacity: 0.18;
+  opacity: 0.3;
   transform: rotate(12deg);
 }
 .shape-green-rect {
-  right: 16%; top: 3%;
+  right: 14%; top: 30%;
   width: clamp(120px, 16vw, 220px);
   height: clamp(120px, 16vw, 220px);
   background: var(--green);
-  opacity: 0.10;
+  opacity: 0.13;
   transform: rotate(-6deg);
 }
 .shape-orange-outline {
-  right: 2%; top: 8%;
+  right: 3%; top: 35%;
   width: clamp(150px, 20vw, 280px);
   height: clamp(140px, 19vw, 260px);
   border: 2px solid var(--orange);
-  opacity: 0.20;
+  opacity: 0.22;
   transform: rotate(4deg);
   background: transparent;
 }
 .shape-green-square {
-  right: 8%; top: 62%;
+  right: 19%; top: 60%;
   width: clamp(56px, 7vw, 88px);
   height: clamp(56px, 7vw, 88px);
   background: var(--green);
@@ -359,39 +360,39 @@ a { text-decoration: none; color: inherit; }
   transform: rotate(-14deg);
 }
 .shape-green-outline-large {
-  right: 6%; top: 2%;
+  right: 8%; top: 22%;
   width: clamp(200px, 28vw, 380px);
   height: clamp(180px, 25vw, 340px);
   border: 1.5px solid var(--green);
-  opacity: 0.12;
+  opacity: 0.14;
   transform: rotate(8deg);
   background: transparent;
 }
 .shape-orange-small {
-  right: 22%; top: 72%;
+  right: 25%; top: 74%;
   width: 60px; height: 60px;
   background: var(--orange);
-  opacity: 0.28;
+  opacity: 0.30;
   transform: rotate(20deg);
 }
 .shape-orange-circle {
-  right: 26%; top: 15%;
+  right: 28%; top: 18%;
   width: 90px; height: 90px;
   border: 4px solid var(--orange);
-  opacity: 0.28;
+  opacity: 0.30;
   border-radius: 50%;
   background: transparent;
 }
 .shape-green-circle {
-  right: -2%; top: 50%;
+  right: -4%; top: 46%;
   width: 200px; height: 200px;
   border: 2px solid var(--green);
-  opacity: 0.12;
+  opacity: 0.14;
   border-radius: 50%;
   background: transparent;
 }
 .shape-orange-dot {
-  right: 32%; top: 80%;
+  right: 35%; top: 78%;
   width: 18px; height: 18px;
   background: var(--orange);
   opacity: 0.55;
