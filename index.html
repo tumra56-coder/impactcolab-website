@@ -386,34 +386,43 @@
 </section>
 
   <section class="about about-light" id="about">
-    <div class="about-accent-bar"></div>
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-portrait reveal-scroll">
-          <div class="portrait-frame" style="background: rgba(0,0,0,0.05);">
-            <div class="portrait-placeholder">
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.2">
-                <circle cx="40" cy="30" r="18" stroke="#1a1a1a" stroke-width="2"/>
-                <path d="M8 72c0-17.7 14.3-32 32-32s32 14.3 32 32" stroke="#1a1a1a" stroke-width="2"/>
-              </svg>
-              <span style="color: rgba(0,0,0,0.3);">Your photo here</span>
-            </div>
-          </div>
-          <div class="portrait-deco-orange"></div>
-          <div class="portrait-deco-green"></div>
+  <div class="about-accent-bar"></div>
+  <div class="section-inner">
+
+    <!-- Top row: small portrait + heading + first para -->
+    <div style="display:grid; grid-template-columns: 200px 1fr; gap: clamp(2rem, 4vw, 3.5rem); align-items: start; margin-bottom: 2rem;" class="reveal-scroll">
+      
+      <!-- Portrait -->
+      <div style="position:relative;">
+        <div style="width:200px; height:200px; border-radius:16px; background:rgba(0,0,0,0.05); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.5rem; overflow:hidden;">
+          <svg width="56" height="56" viewBox="0 0 80 80" fill="none" opacity="0.2">
+            <circle cx="40" cy="30" r="18" stroke="#1a1a1a" stroke-width="2"/>
+            <path d="M8 72c0-17.7 14.3-32 32-32s32 14.3 32 32" stroke="#1a1a1a" stroke-width="2"/>
+          </svg>
+          <span style="font-size:0.75rem; color:rgba(0,0,0,0.3);">Your photo here</span>
         </div>
-        <div class="about-text">
-          <h2 class="section-heading reveal-scroll">Who I Am</h2>
-          <div class="about-body reveal-scroll">
-            <p>I'm Bouchra Atkinson — an evaluator and facilitator with over a decade of experience working with organisations striving to make meaningful change in the world — from governance to community development, from sustainable development to health and social care.</p>
-            <p>I moved to Malawi from Scotland and here I witnessed all the same challenges that every organisation I have ever worked with experienced. Despite brilliant theories of change, carefully crafted strategies and dedicated staff doing extraordinary work, they were still struggling to evidence the difference they were making — and to use that evidence to direct their programmes, adapt in real time, and drive impact. All because they lacked simple systems to capture insights, create feedback loops, and collect evidence that anyone, from a frontline worker to a MEL expert, could both contribute to and use.</p>
-            <p>So I built one — without a development team or a technical background. I held myself to what I believe: that a collaborative approach, a clear framework, and embedding learning in practice are key. With AI as a genuine partner and a methodology honed from over a decade of helping organisations express and evidence their work, I decoded the CoLab into existence.</p>
-            <p>My mission is to help anyone seeking to make a difference learn, adapt, and implement with impact, using the extraordinary technology we now have at our disposal.</p>
-        </div>
-        </div>
+        <div style="position:absolute; bottom:-8px; right:-8px; width:32px; height:32px; background:var(--orange); border-radius:6px; opacity:0.7;"></div>
+        <div style="position:absolute; top:-8px; left:-8px; width:24px; height:24px; border:2px solid var(--green); border-radius:4px; opacity:0.6;"></div>
+      </div>
+
+      <!-- Heading + first para -->
+      <div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(2rem, 4vw, 2.8rem); font-weight:400; letter-spacing:-0.03em; color:var(--fg); line-height:1.15; margin-bottom:1.25rem;">Who I Am</h2>
+        <p style="font-size:clamp(0.92rem, 1.5vw, 1rem); color:var(--muted); line-height:1.85;">I'm Bouchra Atkinson, an evaluator and facilitator with over a decade of experience working with organisations striving to make meaningful change in the world, from governance to community development, from sustainable development to health and social care.</p>
       </div>
     </div>
-  </section>
+
+    <!-- Two column body text -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem, 5vw, 4rem);" class="reveal-scroll">
+      <p style="font-size:clamp(0.92rem, 1.5vw, 1rem); color:var(--muted); line-height:1.85;">I moved to Malawi from Scotland and here I witnessed all the same challenges that every organisation I have ever worked with experienced. Despite brilliant theories of change, carefully crafted strategies and dedicated staff doing extraordinary work, they were still struggling to evidence the difference they were making and to use that evidence to direct their programmes, adapt in real time, and drive impact. All because they lacked simple systems to capture insights, create feedback loops, and collect evidence that anyone, from a frontline worker to a MEL expert, could both contribute to and use.</p>
+      <div>
+        <p style="font-size:clamp(0.92rem, 1.5vw, 1rem); color:var(--muted); line-height:1.85; margin-bottom:1.25rem;">So I built one, without a development team or a technical background. I held myself to what I believe: that a collaborative approach, a clear framework, and embedding learning in practice are key. With AI as a genuine partner and a methodology honed from over a decade of helping organisations express and evidence their work, I decoded the CoLab into existence.</p>
+        <p style="font-size:clamp(0.92rem, 1.5vw, 1rem); color:var(--muted); line-height:1.85;">My mission is to help anyone seeking to make a difference learn, adapt, and implement with impact, using the extraordinary technology we now have at our disposal.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <footer class="footer">
     <div class="footer-shapes" aria-hidden="true">
