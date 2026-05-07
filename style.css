@@ -322,7 +322,7 @@ a { text-decoration: none; color: inherit; }
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  transform: translateX(8%) translateY(10%);
+  transform: translateX(6%) translateY(8%);
 }
 .shape { position: absolute; border-radius: 4px; }
 
