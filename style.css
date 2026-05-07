@@ -322,7 +322,6 @@ a { text-decoration: none; color: inherit; }
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  transform: translateX(8%);
 }
 .shape { position: absolute; border-radius: 4px; }
 .shape-orange-rect {
