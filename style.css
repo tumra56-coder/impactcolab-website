@@ -335,7 +335,7 @@ a { text-decoration: none; color: inherit; }
   transform: rotate(12deg);
 }
 .shape-green-rect {
-  right: 14%; top: 30%;
+  right: 14%; top: 40%;
   width: clamp(120px, 16vw, 220px);
   height: clamp(120px, 16vw, 220px);
   background: var(--green);
@@ -343,7 +343,7 @@ a { text-decoration: none; color: inherit; }
   transform: rotate(-6deg);
 }
 .shape-orange-outline {
-  right: 5%; top: 68%;
+  right: 5%; top: 58%;
   width: clamp(150px, 20vw, 280px);
   height: clamp(140px, 19vw, 260px);
   border: 2px solid var(--orange);
@@ -377,7 +377,7 @@ a { text-decoration: none; color: inherit; }
   transform: rotate(20deg);
 }
 .shape-green-circle {
-  right: 2%; top: 26%;
+  right: 2%; top: 36%;
   width: 300px; height: 300px;
   border: 2px solid var(--green);
   opacity: 0.14;
