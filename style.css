@@ -322,12 +322,12 @@ a { text-decoration: none; color: inherit; }
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  transform: translateX(5%) translateY(6%);
+  transform: translateX(4%) translateY(5%);
 }
 .shape { position: absolute; border-radius: 4px; }
 
 .shape-orange-rect {
-  right: 6%; top: 18%;
+  right: 6%; top: 25%;
   width: clamp(180px, 24vw, 340px);
   height: clamp(170px, 23vw, 320px);
   background: var(--orange);
