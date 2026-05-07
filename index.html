@@ -52,6 +52,7 @@
 .whatwedo-colab-card-body { font-size: 0.92rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
 .whatwedo-colab-card-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--green); text-decoration: none; transition: opacity 0.2s; }
 .whatwedo-colab-card-link:hover { opacity: 0.75; }
+.decode-ai-about { background: var(--bg); padding: var(--section-py) var(--pad-x);}
 .decode-agent { padding: var(--section-py) var(--pad-x); background: var(--bg); }
 .decode-agent-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 4vw, 3rem); align-items: start; }
 .decode-agent-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.5rem; }
@@ -263,64 +264,104 @@
 </div>
 </section>
 
-<!-- Card labels -->
-<div class="card-labels" style="background: white; padding: var(--section-py) var(--pad-x) 1rem;">
-  <div style="max-width: var(--max-w); margin: 0 auto 2rem;">
-  <div style="font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:1rem;">What we offer</div>
-  <h2 style="font-family:var(--font-display); font-size:clamp(2rem, 4vw, 2.8rem); font-weight:400; letter-spacing:-0.03em; color:var(--fg); line-height:1.15;">Our tools.</h2>
-</div>
-  <div style="max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-    <div style="padding: 0 0.5rem;">
-      <div style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--orange);">1 — Your Entry Point</div>
-    </div>
-    <div style="padding: 0 0.5rem;">
-      <div style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--green);">2 — The Full Journey</div>
+  <section class="decode-ai-about" id="decode-ai">
+  <div class="section-inner">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start;">
+      
+      <!-- Left: text -->
+      <div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--orange); margin-bottom:1rem;">Meet Decode AI</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(2rem, 4vw, 2.8rem); font-weight:400; letter-spacing:-0.03em; color:var(--fg); line-height:1.15; margin-bottom:1.5rem;">Your AI strategic thinker.</h2>
+        <p style="font-size:clamp(0.95rem, 1.6vw, 1.05rem); color:var(--muted); line-height:1.85; margin-bottom:1.25rem;">Decode AI is trained in strategy, theory of change, participatory approaches and impact evaluation — as well as our own bespoke REACHS framework. It knows how to ask the right questions, surface assumptions your team hasn't noticed, and turn collective thinking into something clear, structured and actionable.</p>
+        <p style="font-size:clamp(0.95rem, 1.6vw, 1.05rem); color:var(--muted); line-height:1.85; margin-bottom:1.25rem;">But Decode AI is not here to replace your thinking. It is here to amplify it. Every insight, every outcome, every strategy starts with you and your team. Decode AI draws it out, organises it, and builds it into something your whole organisation can own and act on.</p>
+        <p style="font-size:clamp(0.95rem, 1.6vw, 1.05rem); color:var(--muted); line-height:1.85;">It powers every tool in the decodeCoLab ecosystem — from your first strategy session in <span style="color:var(--orange); font-weight:600;">The Decode Studio</span> to your living evidence system in <span style="color:var(--green); font-weight:600;">The CoLab</span>.</p>
+        <a href="meet-decode.html" style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.9rem; font-weight:600; color:var(--orange); text-decoration:none; margin-top:2rem;">
+          Meet Decode AI
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Right: two bubbles -->
+      <div style="display:flex; flex-direction:column; gap:1.25rem; padding-top:1rem;">
+        
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#0d3d2a; flex-shrink:0; display:flex; align-items:center; justify-content:center; margin-top:2px;">
+            <svg width="20" height="18" viewBox="-3 -3 114 101" fill="none">
+              <circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="8" fill="none"/>
+              <rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="8" fill="none"/>
+            </svg>
+          </div>
+          <div style="background:white; border:1.5px solid #1fb376; border-radius:16px; border-bottom-left-radius:4px; padding:16px 20px; font-size:0.95rem; color:#333; line-height:1.75; flex:1; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+            I don't generate generic strategies. I work with what your team already knows — asking questions, listening carefully, and building something that belongs to you. The intelligence was always yours. I just help decode it.
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#0d3d2a; flex-shrink:0; display:flex; align-items:center; justify-content:center; margin-top:2px;">
+            <svg width="20" height="18" viewBox="-3 -3 114 101" fill="none">
+              <circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="8" fill="none"/>
+              <rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="8" fill="none"/>
+            </svg>
+          </div>
+          <div style="background:white; border:1.5px solid #1fb376; border-radius:16px; border-bottom-left-radius:4px; padding:16px 20px; font-size:0.95rem; color:#333; line-height:1.75; flex:1; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+            I guide your team through every step — from your first conversation about purpose and vision, to a clear strategy, measurable outcomes, and a living evidence system that grows as your work does. I am with you for the whole journey.
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
-  
-<!-- Product cards — float freely on page background -->
-<div style="background: white; padding: 0 var(--pad-x) var(--section-py);">
-  <div style="max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem;">
+</section>
+
+<section id="tools" style="background: var(--dark-green); padding: var(--section-py) var(--pad-x);">
+  <div style="max-width: var(--max-w); margin: 0 auto;">
     
-    <!-- Decode card -->
-    <div style="background: #e8731a; border-radius: 16px; padding: clamp(2rem, 3vw, 3rem); position: relative; overflow: hidden;">
-    <div class="card-label-mobile" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:1rem;">1 — Your Entry Point</div>
-    <div style="font-family:var(--font-display); font-size:clamp(1.4rem, 2.5vw, 1.9rem); font-weight:400; color:white; letter-spacing:-0.02em; line-height:1.2; margin-bottom:1rem;">
-      The Decode Studio — Your Strategy Planning Tool.
+    <!-- Section header -->
+    <div style="margin-bottom: 3rem;">
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:1rem;">What we offer</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem, 4vw, 2.8rem); font-weight:400; letter-spacing:-0.03em; color:white; line-height:1.15;">Two tools. One journey.</h2>
     </div>
-    <div style="font-size:1rem; font-weight:600; color:rgba(255,255,255,0.85); margin-bottom:1.25rem; line-height:1.4;">
-      Build a shared vision. Map your pathway. Unlock your impact.
-    </div>
-    <div style="font-size:0.95rem; color:rgba(255,255,255,0.75); line-height:1.9; margin-bottom:2rem;">
-      Move from scattered planning to a shared strategic compass. Build a shared vision for change with your team, map your pathway to impact, and provide the unifying foundations for your organisation.
-    </div>
-    <a href="#decode" style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.9rem; font-weight:600; color:white; text-decoration:none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom:2px;">
-      Learn More
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
 
-  <!-- CoLab card -->
-    <div style="background: #1a5c40; border-radius: 16px; padding: clamp(2rem, 3vw, 3rem); position: relative; overflow: hidden;">
-    <div class="card-label-mobile" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:1rem;">2 — The Full Journey</div>
-    <div style="font-family:var(--font-display); font-size:clamp(1.4rem, 2.5vw, 1.9rem); font-weight:400; color:white; letter-spacing:-0.02em; line-height:1.2; margin-bottom:1rem;">
-      The CoLab — The Full Integrated System.
-    </div>
-    <div style="font-size:1rem; font-weight:600; color:rgba(255,255,255,0.85); margin-bottom:1.25rem; line-height:1.4;">
-      For organisations serious about impact.
-    </div>
-    <div style="font-size:0.95rem; color:rgba(255,255,255,0.75); line-height:1.9; margin-bottom:2rem;">
-      Guided by our AI strategic thinker <span style="color:rgba(255,255,255,0.95); font-weight:600;">Decode AI</span>, bring together strategy, evaluation, data and reflection in one complete, connected system that grows with your organisation.
-    </div>
-    <a href="#colab" style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.9rem; font-weight:600; color:white; text-decoration:none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom:2px;">
-      Learn More
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
+    <!-- Two cards -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
 
+      <!-- Decode Studio card -->
+      <div style="background:white; border-radius:16px; padding:clamp(2rem, 3vw, 3rem); display:flex; flex-direction:column; gap:1.25rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <div style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--orange);">1 — Your Entry Point</div>
+          <div style="width:32px; height:32px; background:#fff3e8; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f58220" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#f58220" stroke-width="2"/></svg>
+          </div>
+        </div>
+        <div style="font-family:var(--font-display); font-size:clamp(1.4rem, 2.5vw, 1.9rem); font-weight:400; color:var(--fg); letter-spacing:-0.02em; line-height:1.2;">The Decode Studio</div>
+        <div style="font-size:0.95rem; font-weight:600; color:var(--orange); line-height:1.4;">Your AI-powered strategy planning tool.</div>
+        <div style="font-size:0.92rem; color:var(--muted); line-height:1.85; flex:1;">Build a shared vision for change with your team, map your pathway to impact, and generate the unifying foundations your organisation needs — your communications, your fundraising, your design and impact strategy. Move from scattered purpose to a shared strategic compass.</div>
+        <a href="decode-studio.html" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.9rem; font-weight:700; color:var(--orange); text-decoration:none; margin-top:0.5rem;">
+          Explore The Decode Studio
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- CoLab card -->
+      <div style="background:white; border-radius:16px; padding:clamp(2rem, 3vw, 3rem); display:flex; flex-direction:column; gap:1.25rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <div style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--green);">2 — The Full Journey</div>
+          <div style="width:32px; height:32px; background:#ecfdf5; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#1fb376" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#1fb376" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div style="font-family:var(--font-display); font-size:clamp(1.4rem, 2.5vw, 1.9rem); font-weight:400; color:var(--fg); letter-spacing:-0.02em; line-height:1.2;">The CoLab</div>
+        <div style="font-size:0.95rem; font-weight:600; color:var(--green); line-height:1.4;">The full integrated system for organisations serious about impact.</div>
+        <div style="font-size:0.92rem; color:var(--muted); line-height:1.85; flex:1;">Bring together strategy, evaluation, reflection and learning in one complete, intelligent platform. Guided by Decode AI, The CoLab grows with your organisation — embedding impact thinking into everything you do and turning your evidence into stories that drive your next chapter forward.</div>
+        <a href="the-colab.html" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.9rem; font-weight:700; color:var(--green); text-decoration:none; margin-top:0.5rem;">
+          Explore The CoLab
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
   </div>
-</div>
+</section>
 
   <section class="stories stories-dark" id="stories">
     <div class="section-inner">
