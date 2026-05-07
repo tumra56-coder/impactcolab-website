@@ -331,7 +331,7 @@ a { text-decoration: none; color: inherit; }
   width: clamp(180px, 24vw, 340px);
   height: clamp(170px, 23vw, 320px);
   background: var(--orange);
-  opacity: 0.48;
+  opacity: 0.3;
   transform: rotate(12deg);
 }
 .shape-green-rect {
@@ -356,7 +356,7 @@ a { text-decoration: none; color: inherit; }
   width: clamp(56px, 7vw, 88px);
   height: clamp(56px, 7vw, 88px);
   background: var(--green);
-  opacity: 0.82;
+  opacity: 0.62;
   border-radius: 6px;
   transform: rotate(-14deg);
 }
