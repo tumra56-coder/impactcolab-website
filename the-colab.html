@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The CoLab — The Full Integrated System | decodeCoLab</title>
+  <meta name="description" content="The CoLab is a holistic, intelligent platform that brings together strategy, evaluation, reflection and learning in one complete connected system. Plan, evaluate, reflect, learn." />
+  <link rel="canonical" href="https://decodecolab.com/the-colab" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 114 101' fill='none'><circle cx='32.5' cy='62.5' r='29.5' stroke='%23f58220' stroke-width='6'/><rect x='45' y='0' width='60' height='60' rx='8' stroke='%231fb376' stroke-width='6'/></svg>">
+  <style>
+
+    /* ── Hero ── */
+    .cl-hero {
+      background: var(--bg);
+      padding: 140px var(--pad-x) 100px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .cl-hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: -120px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(31,179,118,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cl-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,130,32,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cl-hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .cl-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 2rem;
+    }
+    .cl-hero-eyebrow-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+    .cl-hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      color: var(--fg);
+      line-height: 1.0;
+      margin-bottom: 1.5rem;
+    }
+    .cl-hero-name span { color: var(--green); }
+    .cl-hero-tagline {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 3rem;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cl-hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cl-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--green);
+      color: white;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cl-btn-primary:hover { background: #1a9d64; transform: translateY(-2px); }
+    .cl-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      border: 1.5px solid rgba(0,0,0,0.15);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .cl-btn-secondary:hover { border-color: var(--fg); transform: translateY(-2px); }
+
+    /* ── Shared utilities ── */
+    .cl-section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .cl-section-label.green { color: var(--green); }
+    .cl-section-label.orange { color: var(--orange); }
+    .cl-heading-dark {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .cl-heading-light {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .cl-body-dark {
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      color: rgba(255,255,255,0.72);
+      line-height: 1.85;
+    }
+    .cl-body-dark p { margin-bottom: 1.25rem; }
+    .cl-body-dark p:last-child { margin-bottom: 0; }
+    .cl-body-light {
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      color: var(--muted);
+      line-height: 1.85;
+    }
+    .cl-body-light p { margin-bottom: 1.25rem; }
+    .cl-body-light p:last-child { margin-bottom: 0; }
+
+    /* ── 2. About (dark) ── */
+    .cl-about {
+      background: var(--dark-green);
+      padding: var(--section-py) var(--pad-x);
+      position: relative;
+      overflow: hidden;
+    }
+    .cl-about-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+    .cl-about-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      padding-top: 1rem;
+    }
+    .cl-about-stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .cl-about-stat-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(31,179,118,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cl-about-stat-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+    .cl-about-stat-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+    }
+
+    /* ── 3. How it works (light) ── */
+    .cl-steps {
+      background: var(--bg);
+      padding: var(--section-py) var(--pad-x);
+    }
+    .cl-steps-inner { max-width: var(--max-w); margin: 0 auto; }
+    .cl-steps-header { margin-bottom: 3.5rem; max-width: 600px; }
+    .cl-steps-sub {
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      color: var(--muted);
+      line-height: 1.85;
+      margin-top: 1rem;
+    }
+    .cl-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .cl-step-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(0,0,0,0.07);
+      position: relative;
+      overflow: hidden;
+    }
+    .cl-step-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--green);
+    }
+    .cl-step-card.orange-top::before { background: var(--orange); }
+    .cl-step-lab {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+    .cl-step-lab.orange { color: var(--orange); }
+    .cl-step-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: #ecfdf5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .cl-step-icon.orange { background: #fff3e8; }
+    .cl-step-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--fg);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .cl-step-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    /* ── 4. Pricing (dark) ── */
+    .cl-pricing {
+      background: var(--dark-green);
+      padding: var(--section-py) var(--pad-x);
+    }
+    .cl-pricing-inner { max-width: var(--max-w); margin: 0 auto; }
+    .cl-pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .cl-pricing-card {
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+    .cl-pricing-card.light { background: white; }
+    .cl-pricing-card.dark { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); }
+    .cl-pricing-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .cl-pricing-card.light .cl-pricing-card-label { color: var(--green); }
+    .cl-pricing-card.dark .cl-pricing-card-label { color: rgba(255,255,255,0.55); }
+    .cl-pricing-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .cl-pricing-card.light .cl-pricing-name { color: var(--fg); }
+    .cl-pricing-card.dark .cl-pricing-name { color: white; }
+    .cl-pricing-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.25rem;
+      line-height: 1;
+    }
+    .cl-pricing-card.light .cl-pricing-price { color: var(--green); }
+    .cl-pricing-card.dark .cl-pricing-price { color: white; }
+    .cl-pricing-period {
+      font-size: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+    .cl-pricing-card.light .cl-pricing-period { color: var(--muted); }
+    .cl-pricing-card.dark .cl-pricing-period { color: rgba(255,255,255,0.5); }
+    .cl-pricing-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .cl-pricing-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .cl-pricing-card.light .cl-pricing-feature { color: var(--muted); }
+    .cl-pricing-card.dark .cl-pricing-feature { color: rgba(255,255,255,0.7); }
+    .cl-pricing-check {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .cl-pricing-card.light .cl-pricing-check { background: #ecfdf5; }
+    .cl-pricing-card.dark .cl-pricing-check { background: rgba(31,179,118,0.2); }
+    .cl-pricing-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      width: 100%;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .cl-pricing-card.light .cl-pricing-cta { background: var(--green); color: white; }
+    .cl-pricing-card.light .cl-pricing-cta:hover { background: #1a9d64; }
+    .cl-pricing-card.dark .cl-pricing-cta { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); }
+    .cl-pricing-card.dark .cl-pricing-cta:hover { background: rgba(255,255,255,0.18); }
+    .cl-pricing-note {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    /* ── 5. Who it's for (light) ── */
+    .cl-for {
+      background: var(--bg);
+      padding: var(--section-py) var(--pad-x);
+    }
+    .cl-for-inner { max-width: var(--max-w); margin: 0 auto; }
+    .cl-for-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .cl-for-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.75rem;
+      border: 1px solid rgba(0,0,0,0.07);
+    }
+    .cl-for-card-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: #ecfdf5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .cl-for-card h3 { font-size: 1rem; font-weight: 700; color: var(--fg); margin-bottom: 0.5rem; }
+    .cl-for-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
+
+    /* ── 6. Decode AI (dark) ── */
+    .cl-ai {
+      background: var(--dark-green);
+      padding: var(--section-py) var(--pad-x);
+    }
+    .cl-ai-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
+    }
+    .cl-ai-bubbles { display: flex; flex-direction: column; gap: 1rem; padding-top: 2rem; }
+    .cl-ai-bubble { display: flex; align-items: flex-start; gap: 12px; }
+    .cl-ai-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: #0d3d2a;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .cl-ai-bubble-text {
+      background: white;
+      border: 1.5px solid #1fb376;
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      color: #333;
+      line-height: 1.75;
+      flex: 1;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .cl-ai-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--green);
+      text-decoration: none;
+      margin-top: 2rem;
+    }
+
+    /* ── 7. CTA (light) ── */
+    .cl-cta {
+      background: var(--bg);
+      padding: var(--section-py) var(--pad-x);
+      text-align: center;
+    }
+    .cl-cta-inner { max-width: 680px; margin: 0 auto; }
+    .cl-cta-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .cl-cta-sub {
+      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+    .cl-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .cl-cta-note { font-size: 0.82rem; color: var(--muted); margin-top: 1.5rem; opacity: 0.6; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .cl-about-inner { grid-template-columns: 1fr; }
+      .cl-steps-grid { grid-template-columns: 1fr; }
+      .cl-pricing-grid { grid-template-columns: 1fr; }
+      .cl-for-grid { grid-template-columns: 1fr; }
+      .cl-ai-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .cl-hero { padding: 100px var(--pad-x) 60px; }
+      .cl-hero-actions { flex-direction: column; align-items: center; }
+      .cl-btn-primary, .cl-btn-secondary { justify-content: center; width: 100%; max-width: 320px; }
+      .cl-cta-actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg class="logo-mark" width="34" height="30" viewBox="-3 -3 114 101" fill="none">
+          <circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="6" fill="none"/>
+          <rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="6" fill="none"/>
+        </svg>
+        <span class="nav-wordmark">decodeCoLab</span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html#whatwedo">What</a>
+        <a href="index.html#decode-ai">Meet Decode AI</a>
+        <a href="index.html#tools">Our Tools</a>
+        <a href="index.html#about">Who</a>
+        <div class="nav-divider"></div>
+        <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="nav-cta">
+          Enter the CoLab
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="index.html#whatwedo" class="nav-mobile-link">What</a>
+      <a href="index.html#decode-ai" class="nav-mobile-link">Meet Decode AI</a>
+      <a href="index.html#tools" class="nav-mobile-link">Our Tools</a>
+      <a href="index.html#about" class="nav-mobile-link">Who</a>
+      <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="nav-mobile-cta">
+        Enter the CoLab
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- 1. Hero -->
+  <section class="cl-hero">
+    <div class="cl-hero-inner">
+      <div class="cl-hero-eyebrow">
+        <span class="cl-hero-eyebrow-dot"></span>
+        The Full Integrated System
+      </div>
+      <h1 class="cl-hero-name">The<br><span>CoLab.</span></h1>
+      <p class="cl-hero-tagline">Plan, evaluate, reflect and learn — in one complete, intelligent platform. The CoLab brings together everything your organisation needs to grow its impact, guided by Decode AI throughout the entire journey.</p>
+      <div class="cl-hero-actions">
+        <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="cl-btn-primary">
+          Enter The CoLab
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="mailto:hello@decodecolab.com?subject=CoLab enquiry" class="cl-btn-secondary">
+          Talk to Bouchra
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. About (dark) -->
+  <section class="cl-about">
+    <div class="cl-about-inner">
+      <div>
+        <span class="cl-section-label green">About The CoLab</span>
+        <h2 class="cl-heading-dark">One system. The entire journey of change.</h2>
+        <div class="cl-body-dark">
+          <p>The CoLab is a holistic, intelligent platform for organisations serious about impact. It brings together three interconnected Labs — <span style="color:var(--orange); font-weight:600;">The Decode Studio</span> for strategy, <span style="color:var(--green); font-weight:600;">Evaluation Lab</span> for evidence, and <span style="color:var(--green); font-weight:600;">Story Lab</span> for reflection and learning — in one complete, connected system.</p>
+          <p>Most organisations plan in silos. Strategy happens in one place, monitoring and evaluation in another, learning and reporting somewhere else entirely. The CoLab connects all three, so that your strategy directly informs how you collect evidence, your evidence feeds your reflection, and your learning shapes your next chapter.</p>
+          <p>Guided by <span style="color:var(--orange); font-weight:600;">Decode AI</span> throughout, The CoLab grows with your organisation — embedding impact thinking into everything you do and turning your collective intelligence into stories that matter.</p>
+        </div>
+      </div>
+      <div class="cl-about-stats">
+        <div class="cl-about-stat">
+          <div class="cl-about-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#1fb376" stroke-width="2" stroke-linecap="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#1fb376" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="cl-about-stat-title">Three connected Labs</div>
+            <div class="cl-about-stat-desc">The Decode Studio, Evaluation Lab and Story Lab — each powerful alone, transformative together.</div>
+          </div>
+        </div>
+        <div class="cl-about-stat">
+          <div class="cl-about-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#1fb376" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#1fb376" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="cl-about-stat-title">A living system</div>
+            <div class="cl-about-stat-desc">The CoLab grows with your organisation — your strategy, evidence and learning evolve together in real time.</div>
+          </div>
+        </div>
+        <div class="cl-about-stat">
+          <div class="cl-about-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#1fb376" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#1fb376" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#1fb376" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="cl-about-stat-title">Built for whole teams</div>
+            <div class="cl-about-stat-desc">Every team member contributes from their own device, in their own time — from anywhere in the world.</div>
+          </div>
+        </div>
+        <div class="cl-about-stat">
+          <div class="cl-about-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="#1fb376" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="cl-about-stat-title">Powered by Decode AI</div>
+            <div class="cl-about-stat-desc">Trained in strategy, impact measurement and our proprietary REACHS framework — present at every step.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. How it works (light) -->
+  <section class="cl-steps">
+    <div class="cl-steps-inner">
+      <div class="cl-steps-header">
+        <span class="cl-section-label green">How it works</span>
+        <h2 class="cl-heading-light">Three Labs.<br>One connected journey.</h2>
+        <p class="cl-steps-sub">The CoLab connects strategy, evidence and learning so that each part of your impact journey feeds the next. Start with The Decode Studio and build outward — or enter at any point that fits where your organisation is right now.</p>
+      </div>
+      <div class="cl-steps-grid">
+
+        <div class="cl-step-card orange-top">
+          <div class="cl-step-lab orange">The Decode Studio</div>
+          <div class="cl-step-icon orange">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f58220" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="#f58220" stroke-width="1.8"/></svg>
+          </div>
+          <h3>Build your strategy.</h3>
+          <p>Your entry point into The CoLab. Guided by Decode AI, your team builds a shared vision, maps your pathway to impact and generates your Impact Blueprint — the strategic foundation for everything that follows. Four steps. One shared compass.</p>
+        </div>
+
+        <div class="cl-step-card">
+          <div class="cl-step-lab">Evaluation Lab</div>
+          <div class="cl-step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Collect your evidence.</h3>
+          <p>Your outcomes from The Decode Studio automatically connect to Evaluation Lab, where you build a practical evidence framework, collect data, and track progress against your outcomes. Log observations, field notes, partner reports and reflections — formal and informal, planned and unexpected.</p>
+        </div>
+
+        <div class="cl-step-card">
+          <div class="cl-step-lab">Story Lab</div>
+          <div class="cl-step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round"/><polyline points="14,2 14,8 20,8" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round"/><line x1="16" y1="13" x2="8" y2="13" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round"/><line x1="16" y1="17" x2="8" y2="17" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Tell your story.</h3>
+          <p>Decode AI connects the pieces of your evidence and turns them into powerful stories of change. Story Lab embeds a reflective practice into your organisation — creating space to pause, learn and adapt as your work evolves, and generating narratives that communicate your impact to funders, partners and the communities you serve.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Pricing (dark) -->
+  <section class="cl-pricing">
+    <div class="cl-pricing-inner">
+      <span class="cl-section-label green">Pricing</span>
+      <h2 class="cl-heading-dark">Simple, transparent pricing.</h2>
+      <div class="cl-pricing-grid">
+        <div class="cl-pricing-card light">
+          <div class="cl-pricing-card-label">Self-guided</div>
+          <div class="cl-pricing-name">The CoLab</div>
+          <div class="cl-pricing-price">TBC</div>
+          <div class="cl-pricing-period">Subscription — billed annually</div>
+          <div class="cl-pricing-features">
+            <div class="cl-pricing-feature"><div class="cl-pricing-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full access to all three Labs</div>
+            <div class="cl-pricing-feature"><div class="cl-pricing-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Guided throughout by Decode AI</div>
+            <div class="cl-pricing-feature"><div class="cl-pricing-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Downloadable Impact Blueprint</div>
+            <div class="cl-pricing-feature"><div class="cl-pricing-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Living evidence and data system</div>
+            <div class="cl-pricing-feature"><div class="cl-pricing-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Unlimited team members</div>
+            <div class="cl-pricing-feature"><div class="cl-pricing-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>AI-generated stories of change</div>
+          </div>
+          <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="cl-pricing-cta">
+            Enter The CoLab
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="cl-pricing-card dark">
+          <div class="cl-pricing-card-label">Facilitated</div>
+          <div class="cl-pricing-name">With Bouchra</div>
+          <div class="cl-pricing-price">POA</div>
+          <div class="cl-pricing-period">Bespoke to your organisation</div>
+          <div class="cl-pricing-features">
+            <div class="cl-pricing-feature"><div class="cl-pricing-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Everything in the self-guided version</div>
+            <div class="cl-pricing-feature"><div class="cl-pricing-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Facilitated team workshops with Bouchra</div>
+            <div class="cl-pricing-feature"><div class="cl-pricing-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Evaluation design and strategic support</div>
+            <div class="cl-pricing-feature"><div class="cl-pricing-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Online or in person</div>
+            <div class="cl-pricing-feature"><div class="cl-pricing-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1fb376" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Ongoing support and review sessions</div>
+          </div>
+          <a href="mailto:hello@decodecolab.com?subject=CoLab facilitated enquiry" class="cl-pricing-cta">
+            Get in touch
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <p class="cl-pricing-note">Malawian organisations participating in our pilot programme access The CoLab free of charge for a limited time.</p>
+    </div>
+  </section>
+
+  <!-- 5. Who it's for (light) -->
+  <section class="cl-for">
+    <div class="cl-for-inner">
+      <span class="cl-section-label green">Who it's for</span>
+      <h2 class="cl-heading-light">For organisations serious<br>about their impact.</h2>
+      <div class="cl-for-grid">
+        <div class="cl-for-card">
+          <div class="cl-for-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#1fb376" stroke-width="2" stroke-linecap="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#1fb376" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Organisations ready to go further</h3>
+          <p>You've built your strategy with The Decode Studio and you're ready to connect it to how you collect evidence, embed learning, and tell your story of change. The CoLab is where that journey continues.</p>
+        </div>
+        <div class="cl-for-card">
+          <div class="cl-for-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#1fb376" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="#1fb376" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>NGOs and social enterprises</h3>
+          <p>You need to evidence your impact for funders, partners and stakeholders — but you want your evidence to be meaningful, not just a compliance exercise. The CoLab builds systems your whole team owns and uses.</p>
+        </div>
+        <div class="cl-for-card">
+          <div class="cl-for-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#1fb376" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#1fb376" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#1fb376" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Teams that want to learn and adapt</h3>
+          <p>You believe that the best organisations are learning organisations. The CoLab embeds a reflective practice into your work so that learning becomes continuous, not an annual afterthought.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Decode AI (dark) -->
+  <section class="cl-ai">
+    <div class="cl-ai-inner">
+      <div>
+        <span class="cl-section-label green">Powered by Decode AI</span>
+        <h2 class="cl-heading-dark">Your AI strategic thinker is with you for the whole journey.</h2>
+        <div class="cl-body-dark">
+          <p>Decode AI has been trained in strategy, organisational development, impact measurement, learning systems and our own proprietary REACHS framework. It is present at every step of The CoLab — from your first strategy session to the evidence you collect and the stories you tell.</p>
+          <p>It synthesises your team's inputs, connects your outcomes to your evidence, spots patterns in what you are collecting, and turns your data into stories that actually get used — by your team, your funders, and the communities you serve.</p>
+        </div>
+        <a href="meet-decode.html" class="cl-ai-link">
+          Meet Decode AI
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="cl-ai-bubbles">
+        <div class="cl-ai-bubble">
+          <div class="cl-ai-avatar">
+            <svg width="20" height="18" viewBox="-3 -3 114 101" fill="none"><circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="8" fill="none"/><rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="8" fill="none"/></svg>
+          </div>
+          <div class="cl-ai-bubble-text">I connect the pieces. Your strategy informs your evidence framework. Your evidence feeds your reflection. Your learning shapes your next chapter. I hold all of it together so nothing gets lost.</div>
+        </div>
+        <div class="cl-ai-bubble">
+          <div class="cl-ai-avatar">
+            <svg width="20" height="18" viewBox="-3 -3 114 101" fill="none"><circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="8" fill="none"/><rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="8" fill="none"/></svg>
+          </div>
+          <div class="cl-ai-bubble-text">Most of the evidence you need already exists — in emails, field observations, partner conversations and your own reflections. I help you capture it, connect it to your outcomes, and turn it into something credible and compelling.</div>
+        </div>
+        <div class="cl-ai-bubble">
+          <div class="cl-ai-avatar">
+            <svg width="20" height="18" viewBox="-3 -3 114 101" fill="none"><circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="8" fill="none"/><rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="8" fill="none"/></svg>
+          </div>
+          <div class="cl-ai-bubble-text">I also help embed a reflective practice into your organisation, creating space to pause, learn and adapt as your work evolves. The goal is not just to prove your impact. It is to help you own it.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CTA (light) -->
+  <section class="cl-cta">
+    <div class="cl-cta-inner">
+      <span class="cl-section-label green" style="text-align:center;">Get started</span>
+      <h2 class="cl-cta-heading">Ready to grow your impact?</h2>
+      <p class="cl-cta-sub">Enter The CoLab and start the full journey — from shared strategy to living evidence to stories that drive your next chapter forward. Use it independently guided by Decode AI, or work with Bouchra for a facilitated experience.</p>
+      <div class="cl-cta-actions">
+        <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="cl-btn-primary">
+          Enter The CoLab
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="mailto:hello@decodecolab.com?subject=CoLab enquiry" class="cl-btn-secondary">
+          Talk to Bouchra
+        </a>
+      </div>
+      <p class="cl-cta-note">Not sure where to start? Begin with The Decode Studio — your entry point into The CoLab.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-shapes" aria-hidden="true">
+      <div class="fshape fshape-1"></div>
+      <div class="fshape fshape-2"></div>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <svg width="34" height="30" viewBox="-3 -3 114 101" fill="none">
+            <circle cx="32.5" cy="62.5" r="29.5" stroke="rgba(245,130,32,0.7)" stroke-width="6" fill="none"/>
+            <rect x="45" y="0" width="60" height="60" rx="8" stroke="rgba(31,179,118,0.7)" stroke-width="6" fill="none"/>
+          </svg>
+          <span>decodeCoLab</span>
+        </div>
+        <p class="footer-desc">Impact evaluation and facilitation for organisations doing work that matters. Based in Malawi, working globally.</p>
+        <a href="mailto:hello@decodecolab.com" class="footer-email">hello@decodecolab.com</a>
+      </div>
+      <div class="footer-right">
+        <a href="https://app.decodecolab.com/" target="_blank" rel="noopener noreferrer" class="footer-platform-link">
+          Enter The CoLab
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="footer-copy">&copy; <span id="year"></span> decodeCoLab by Bouchra Atkinson. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
