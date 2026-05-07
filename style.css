@@ -368,7 +368,7 @@ a { text-decoration: none; color: inherit; }
   background: transparent;
 }
 .shape-orange-small {
-  right: 17%; top: 68%;
+  right: 17%; top: 74%;
   width: 60px; height: 60px;
   background: var(--orange);
   opacity: 0.30;
