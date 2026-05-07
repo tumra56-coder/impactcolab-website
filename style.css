@@ -326,11 +326,11 @@ a { text-decoration: none; color: inherit; }
 .shape { position: absolute; border-radius: 4px; }
 
 .shape-orange-rect {
-  right: 6%; top: 18%;
+  right: 6%; top: 40%;
   width: clamp(180px, 24vw, 340px);
   height: clamp(170px, 23vw, 320px);
   background: var(--orange);
-  opacity: 0.48;
+  opacity: 0.3;
   transform: rotate(12deg);
 }
 .shape-green-rect {
@@ -342,7 +342,7 @@ a { text-decoration: none; color: inherit; }
   transform: rotate(-6deg);
 }
 .shape-orange-outline {
-  right: 3%; top: 38%;
+  right: 3%; top: 35%;
   width: clamp(150px, 20vw, 280px);
   height: clamp(140px, 19vw, 260px);
   border: 2px solid var(--orange);
