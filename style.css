@@ -327,7 +327,7 @@ a { text-decoration: none; color: inherit; }
 .shape { position: absolute; border-radius: 4px; }
 
 .shape-orange-rect {
-  right: 6%; top: 25%;
+  right: 6%; top: 10%;
   width: clamp(180px, 24vw, 340px);
   height: clamp(170px, 23vw, 320px);
   background: var(--orange);
