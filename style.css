@@ -844,3 +844,9 @@ a { text-decoration: none; color: inherit; }
 .nav-active {
   color: var(--orange) !important;
 }
+.nav-cta-orange {
+  background: var(--orange) !important;
+}
+.nav-cta-orange:hover {
+  background: #e07318 !important;
+}
