@@ -1,3 +1,308 @@
+  <!DOCTYPE html>
+<html lang="en">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bouchra Atkinson",
+  "jobTitle": "Impact Evaluator and Facilitator",
+  "url": "https://decodecolab.com",
+  "description": "Impact evaluator and facilitator based in Malawi, working globally. Founder of decodeCoLab.",
+  "sameAs": ["https://www.linkedin.com/in/bouchra-atkinson"]
+}
+</script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>decodeCoLab — Impact Evaluation & Facilitation</title>
+  <meta name="author" content="Bouchra Atkinson" />  
+  <meta name="description" content="Bouchra Atkinson is an impact evaluator and facilitator based in Malawi, working globally. Founder of decodeCoLab — helping NGOs, charities and social enterprises decode their collective intelligence into clear theories of change and compelling evidence." />
+  <link rel="canonical" href="https://decodecolab.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 114 101' fill='none'><circle cx='32.5' cy='62.5' r='29.5' stroke='%23f58220' stroke-width='6'/><rect x='45' y='0' width='60' height='60' rx='8' stroke='%231fb376' stroke-width='6'/></svg>">
+  <style>
+  .whatwedo {
+  background: var(--dark-green);
+  padding: var(--section-py) var(--pad-x);
+  position: relative;
+  overflow: hidden;
+}
+.whatwedo-accent { position: absolute; top: 0; left: 0; height: 3px; width: 6rem; background: linear-gradient(to right, var(--orange), var(--green)); }
+.whatwedo-inner { max-width: var(--max-w); margin: 0 auto; }
+.whatwedo-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 1.25rem; }
+.whatwedo-heading { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 400; letter-spacing: -0.03em; color: white; line-height: 1.15; margin-bottom: 2.5rem; }
+.whatwedo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.whatwedo-text { display: flex; flex-direction: column; gap: 0; }
+.whatwedo-body { font-size: clamp(0.95rem, 1.6vw, 1.05rem); color: rgba(255,255,255,0.72); line-height: 1.85; }
+.whatwedo-body p { margin-bottom: 1.25rem; }
+.whatwedo-body p:last-child { margin-bottom: 0; }
+.whatwedo-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.whatwedo-link { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.5rem; border-radius: var(--radius-full); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; }
+.whatwedo-link-green { background: var(--green); color: white; }
+.whatwedo-link-green:hover { background: #1a9d64; transform: translateY(-2px); }
+.whatwedo-link-outline { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.35); }
+.whatwedo-link-outline:hover { border-color: white; }
+.whatwedo-colab-card { background: #f5f0e8; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: clamp(1.5rem, 3vw, 2.5rem); position: relative; overflow: hidden; }
+.whatwedo-colab-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--green), var(--orange)); }
+.whatwedo-colab-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem; }
+.whatwedo-colab-card-heading { font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 400; color: var(--fg); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1.25rem; }
+.whatwedo-colab-card-body { font-size: 0.92rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+.whatwedo-colab-card-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--green); text-decoration: none; transition: opacity 0.2s; }
+.whatwedo-colab-card-link:hover { opacity: 0.75; }
+.decode-ai-about { background: var(--bg); padding: var(--section-py) var(--pad-x);}
+.decode-agent { padding: var(--section-py) var(--pad-x); background: var(--bg); }
+.decode-agent-inner { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 4vw, 3rem); align-items: start; }
+.decode-agent-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.5rem; }
+.decode-agent-heading { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; letter-spacing: -0.03em; color: var(--fg); line-height: 1.1; margin-bottom: 0.5rem; }
+.decode-agent-tagline { font-size: 1rem; color: var(--orange); font-weight: 600; margin-bottom: 2rem; }
+.decode-agent-body { font-size: clamp(0.95rem, 1.5vw, 1.05rem); color: var(--muted); line-height: 1.85; }
+.decode-agent-body p { margin-bottom: 1.25rem; }
+.decode-agent-body p:last-child { margin-bottom: 0; }
+.decode-agent-card { background: white; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.07); padding: clamp(2rem, 4vw, 2.8rem); position: relative; overflow: hidden; }
+.decode-agent-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--orange), var(--green)); }
+.decode-agent-quote { font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.35rem); font-style: italic; color: var(--fg); line-height: 1.5; margin-bottom: 1.75rem; letter-spacing: -0.02em; }
+.decode-agent-facts { display: flex; flex-direction: column; gap: 0.85rem; }
+.decode-agent-fact { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+.decode-agent-fact-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); flex-shrink: 0; margin-top: 0.45rem; }
+.services { padding-top: 2rem; }
+.stories-dark { background: var(--dark-green) !important; }
+.stories-dark .section-heading { color: white; }
+.stories-dark .section-sub { color: rgba(255,255,255,0.65); }
+.stories-dark .story-card { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.1) !important; }
+.stories-dark .story-card h3 { color: white; }
+.stories-dark .story-card p { color: rgba(255,255,255,0.65); }
+.about-light { background: var(--bg) !important; }
+.about-light .about-accent-bar { background: linear-gradient(to right, var(--orange), var(--green)); }
+.about-light .section-heading { color: var(--fg); }
+.about-light .about-body { color: var(--muted); }
+.about-light .portrait-frame { background: rgba(0,0,0,0.05) !important; }
+.hero-eyebrow { margin-top: 0rem; margin-bottom: 1.75rem; color: var(--fg); }
+.hero-headline { margin-top: 0; }
+.hero-sub { margin-bottom: 10px; }
+.hero-sub:last-of-type { margin-bottom: 30px; }
+.hero-ai-pill {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  background: #0d3d2a;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 16px 7px 12px;
+  border-radius: 100px;
+  margin-top: 2rem;
+  margin-bottom: 48px;
+}
+.btn-outline { background: #f58220; color: white; border: none; }
+.btn-outline:hover { background: #e07318; }
+.hero-pillars { display: flex; align-items: center; flex-wrap: wrap; gap: 0; margin-top: -0.5rem; margin-bottom: 2rem; }
+.pillar { font-size: 15px; font-weight: 700; color: var(--dark-green); }
+.pillar-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--orange); margin: 0 14px; flex-shrink: 0; }
+.ai-pulse { width: 8px; height: 8px; border-radius: 50%; background: #1fb376; flex-shrink: 0; animation: pulse 2s ease-in-out infinite; }
+.card-label-mobile { display: none; }
+    
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@media (max-width: 900px) {
+  .whatwedo-grid { grid-template-columns: 1fr; }
+  .decode-agent-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .about-light .about-grid { grid-template-columns: 1fr; }
+  .about-light .about-portrait { order: -1; max-width: 320px; margin: 0 auto; }
+  .reachs-spacer { display: none; }
+  .decode-ai-about .section-inner > div { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 800px) {
+  .platform-inner > div { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 768px) {
+  /* Hero */
+  .hero-shapes { display: none; }
+  .hero-headline { font-size: 13vw; line-height: 1.15; margin-bottom: 1.5rem !important; }
+  .hero-content { max-width: 100%; }
+  .hero-sub { font-size: 0.95rem; }
+  .hero-pillars { margin-bottom: 1.25rem; }
+  .hero-ai-pill { margin-top: 1rem; margin-bottom: 1.5rem; }
+  .hero-actions { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 0.75rem; }
+  .btn-outline, .btn-primary { font-size: 0.8rem; padding: 0.6rem 1rem; }
+
+  /* What we do — stack two columns */
+  .whatwedo-inner > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  .whatwedo-links { flex-direction: column; }
+  .whatwedo-link { justify-content: center; }
+
+  /* Decode AI section — stack */
+  .decode-ai-about .section-inner > div { grid-template-columns: 1fr !important; }
+
+  /* Our Tools — stack cards */
+  #tools div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+
+  /* Who I Am — stack portrait and text */
+  #about div[style*="grid-template-columns: 200px"] { grid-template-columns: 1fr !important; }
+  #about div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  #about div[style*="width:200px"] { width: 100% !important; }
+
+  /* General grid fallback */
+  div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+  div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+
+  /* Card labels */
+  .card-labels { display: none; }
+  .card-label-mobile { display: block; }
+
+  /* Reduce section padding on mobile */
+  .whatwedo-heading { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+}
+  </style>
+</head>
+<body>
+
+    <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg class="logo-mark" width="34" height="30" viewBox="-3 -3 114 101" fill="none">
+          <circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="6" fill="none"/>
+          <rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="6" fill="none"/>
+        </svg>
+        <span class="nav-wordmark">decodeCoLab</span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#whatwedo">What</a>
+        <a href="#about">Who</a>
+        <a href="decode-studio.html">The Decode Studio</a>
+        <a href="from-the-field.html">Blog</a>
+        <div class="nav-divider"></div>
+        <a href="colab-coming-soon.html" target="_blank" rel="noopener noreferrer" class="nav-cta">
+          Enter the CoLab
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#whatwedo" class="nav-mobile-link">What</a>
+      <a href="#about" class="nav-mobile-link">Who</a>
+      <a href="decode-studio.html" class="nav-mobile-link">The Decode Studio</a>
+      <a href="from-the-field.html" class="nav-mobile-link">Blog</a>
+      <a href="colab-coming-soon.html" target="_blank" rel="noopener noreferrer" class="nav-mobile-cta">
+        Enter the CoLab
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </header>
+    
+  <section class="hero">
+    <div class="hero-shapes" aria-hidden="true">
+      <div class="shape shape-orange-rect"></div>
+      <div class="shape shape-green-rect"></div>
+      <div class="shape shape-orange-outline"></div>
+      <div class="shape shape-green-square"></div>
+      <div class="shape shape-green-outline-large"></div>
+      <div class="shape shape-orange-small"></div>
+      <div class="shape shape-orange-circle"></div>
+      <div class="shape shape-green-circle"></div>
+      <div class="shape shape-orange-dot"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">
+        <span class="eyebrow-line"></span>
+        <span>An integrated intelligent system</span>
+      </div>
+      <h1 class="hero-headline reveal reveal-delay-1" style="margin-bottom: 2.5rem; line-height: 1;">
+        <span class="text-orange">Decode.</span><br>
+        <span class="text-green">Collaborate.</span><br>
+       <strong>Build Impact.</strong>
+      </h1>
+       </p>
+       <p class="hero-sub reveal reveal-delay-2">
+        For startups, NGOs and mission-driven organisations who want to think clearly, act strategically, and evidence  what changes. Harnessing the power of human intelligence to grow their impact.
+      </p>
+      <div class="hero-pillars reveal reveal-delay-2">
+        <span class="pillar">Strategise</span>
+        <span class="pillar-sep"></span>
+        <span class="pillar">Evaluate</span>
+        <span class="pillar-sep"></span>
+        <span class="pillar">Learn</span>
+        <span class="pillar-sep"></span>
+        <span class="pillar">Grow</span>
+      </div>
+     <a href="#decode-ai" style="text-decoration:none;">
+        <div class="hero-ai-pill reveal reveal-delay-2">
+          <span class="ai-pulse"></span>
+          Powered by Decode AI
+        </div>
+      </a>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="decode-studio.html" class="btn-outline">Decode Now</a>
+        <a href="colab-coming-soon.html" target="_blank" rel="noopener noreferrer" class="btn-primary">Enter the CoLab</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="whatwedo" id="whatwedo">
+    <div class="whatwedo-accent"></div>
+    <div class="whatwedo-shapes" aria-hidden="true" style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+      <div style="position:absolute; right:-3%; top:-10%; width:300px; height:300px; background:var(--orange); opacity:0.06; transform:rotate(18deg); border-radius:4px;"></div>
+      <div style="position:absolute; left:-3%; bottom:-10%; width:240px; height:220px; background:var(--green); opacity:0.08; transform:rotate(-12deg); border-radius:4px;"></div>
+      <div style="position:absolute; right:20%; top:10%; width:120px; height:120px; border:2px solid var(--orange); opacity:0.15; transform:rotate(8deg); border-radius:4px; background:transparent;"></div>
+      <div style="position:absolute; left:15%; bottom:8%; width:80px; height:80px; border:2px solid var(--green); opacity:0.18; transform:rotate(-5deg); border-radius:4px; background:transparent;"></div>
+      <div style="position:absolute; right:10%; top:25%; width:100px; height:100px; border:3px solid var(--orange); opacity:0.18; border-radius:50%; background:transparent;"></div>
+    </div>
+   <div class="whatwedo-inner reveal-scroll">
+  <div class="whatwedo-label">decodeCoLab</div>
+  <h2 class="whatwedo-heading">Decoding complexity<br>into clarity.</h2>
+
+  <!-- Two column text -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); margin-bottom: 2rem;">
+    <div class="whatwedo-body">
+      <p><span style="color: var(--orange); font-weight: 600;">decodeCoLab</span> is a consultancy for any organisation with a vision to make meaningful change in the world. We believe that without a shared strategy, a reflective practice and a living data and evidence system, impact is difficult to realise, difficult to prove and difficult to communicate.</p>
+      <p>To help you achieve this, we built two AI-powered tools that harness the intelligence already rooted in and around your organisation, in your teams, your partners, and the communities you serve. It is their insight that powers impact.</p>
+    </div>
+    <div class="whatwedo-body">
+      <p><span style="color: var(--orange); font-weight: 600;">The Decode Studio</span> draws it out into a shared strategy. <span style="color: var(--green); font-weight: 600;">The CoLab</span> grows it into a reflective practice, and a living data and evidence system that helps you adapt, learn, and communicate your story of change.</p>
+      <p>Our philosophy is simple: the intelligence needed to drive your impact already exists inside your organisation. We just help you decode it.</p>
+<p>Start with <span style="color: var(--orange); font-weight: 600;">The Decode Studio</span> now to build a shared vision and strategy your whole team owns. Or dive straight into <span style="color: var(--green); font-weight: 600;">The CoLab</span> and begin building your integrated impact system today.</p>
+    </div>
+  </div>
+
+  <!-- Buttons under text -->
+  <div class="whatwedo-links" style="margin-bottom: 3rem;">
+    <a href="#tools" class="whatwedo-link whatwedo-link-green">
+      The tools
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="#decode-ai" class="whatwedo-link whatwedo-link-outline">
+      Meet Decode AI
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+</div>
+</div>
+</section>
+
+  <section class="decode-ai-about" id="decode-ai">
+  <div class="section-inner">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start;">
+      
+     <!-- Left: text -->
+<div>
+  <div style="font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--orange); margin-bottom:1rem;">Meet Decode AI</div>
+  <h2 style="font-family:var(--font-display); font-size:clamp(2rem, 4vw, 2.8rem); font-weight:400; letter-spacing:-0.03em; color:var(--fg); line-height:1.15; margin-bottom:1.5rem;">Your AI strategic thinker.</h2>
+  <p style="font-size:clamp(0.95rem, 1.6vw, 1.05rem); color:var(--muted); line-height:1.85; margin-bottom:1.25rem;">Decode AI has undergone rigorous training to support the growth of your organisation across strategy, organisational development, impact measurement and learning systems. Trained in our proprietary <span style="color:var(--orange); font-weight:600;">REACHS</span> framework, it knows how to ask the right questions, surface assumptions, and turn collective thinking into something clear, structured and actionable.</p>
+  <p style="font-size:clamp(0.95rem, 1.6vw, 1.05rem); color:var(--muted); line-height:1.85;">But Decode AI is not here to replace your thinking. It is here to amplify it. Every insight, every outcome, every strategy starts with you and your team. Your AI strategic thinker simply draws it out, organises it, and builds it into something your whole organisation can own and act on. <span style="color:var(--orange); font-weight:600;">Decode AI</span> powers every tool in the decodeCoLab ecosystem, from your first strategy session in <span style="color:var(--orange); font-weight:600;">The Decode Studio</span> to your living learning and evidence system in <span style="color:var(--green); font-weight:600;">The CoLab</span>.</p>
+
+  <div class="whatwedo-links" style="margin-bottom: 3rem;">
       <a href="#tools" class="whatwedo-link whatwedo-link-green">
           The tools
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -68,7 +373,7 @@
           </div>
         </div>
         <div style="font-family:var(--font-display); font-size:clamp(1.6rem, 2.5vw, 2rem);; font-weight:400; color:var(--fg); letter-spacing:-0.02em; line-height:1.2;">The Decode Studio</div>
-        <div style="font-size:0.95rem; font-weight:600; color:var(--orange); line-height:1.4;">Your collaborative strategy space.</div>
+        <div style="font-size:0.95rem; font-weight:600; color:var(--orange); line-height:1.4;">Your AI-powered strategy planning tool.</div>
         <div style="font-size:0.92rem; color:var(--muted); line-height:1.85; flex:1;">Build a shared vision for change with your team, map your pathway to impact, and establish the unifying foundations your organisation needs to align everything that follows, from your communications to your fundraising, from your design to your impact strategy. Move from scattered purpose to a shared strategic compass.</div>
         <a href="decode-studio.html" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.9rem; font-weight:700; color:var(--orange); text-decoration:none; margin-top:0.5rem;">
           Explore The Decode Studio
