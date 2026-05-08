@@ -841,3 +841,6 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 800px) {
   .whatwedo-grid { grid-template-columns: 1fr; }
 }
+.nav-active {
+  color: var(--orange) !important;
+}
