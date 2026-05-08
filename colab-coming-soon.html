@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoLab is Coming | decodeCoLab</title>
+  <meta name="description" content="CoLab is coming. We're still building it — and we want to build it with the right organisations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 114 101' fill='none'><circle cx='32.5' cy='62.5' r='29.5' stroke='%23f58220' stroke-width='6'/><rect x='45' y='0' width='60' height='60' rx='8' stroke='%231fb376' stroke-width='6'/></svg>">
+  <style>
+
+    .cs-page {
+      min-height: 100vh;
+      background: var(--dark-green);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cs-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px var(--pad-x) 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cs-main::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,130,32,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cs-main::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(31,179,118,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cs-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cs-logo-mark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+      animation: cs-float 4s ease-in-out infinite;
+    }
+
+    @keyframes cs-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .cs-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .cs-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      color: white;
+      line-height: 1.05;
+      margin-bottom: 1.75rem;
+    }
+
+    .cs-heading span { color: var(--orange); }
+
+    .cs-body {
+      font-size: clamp(1rem, 1.8vw, 1.1rem);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cs-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .cs-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--orange);
+      color: white;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cs-btn-primary:hover { background: #e07318; transform: translateY(-2px); }
+
+    .cs-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: rgba(255,255,255,0.8);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .cs-btn-secondary:hover { border-color: rgba(255,255,255,0.5); transform: translateY(-2px); }
+
+    .cs-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+      margin: 0 auto 2rem;
+    }
+
+    .cs-coming {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cs-coming-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.05em;
+    }
+
+    .cs-coming-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+    }
+
+    .cs-coming-dot.orange { background: var(--orange); opacity: 0.6; }
+    .cs-coming-dot.green { background: var(--green); opacity: 0.6; }
+
+    @media (max-width: 768px) {
+      .cs-actions { flex-direction: column; align-items: center; }
+      .cs-btn-primary, .cs-btn-secondary { width: 100%; max-width: 320px; justify-content: center; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg class="logo-mark" width="34" height="30" viewBox="-3 -3 114 101" fill="none">
+          <circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="6" fill="none"/>
+          <rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="6" fill="none"/>
+        </svg>
+        <span class="nav-wordmark">decodeCoLab</span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html#whatwedo">What</a>
+        <a href="index.html#about">Who</a>
+        <a href="decode-studio.html">The Decode Studio</a>
+        <a href="from-the-field.html">Blog</a>
+        <div class="nav-divider"></div>
+        <a href="https://app.decodecolab.com/login.html" target="_blank" rel="noopener noreferrer" class="nav-cta">
+          Enter the CoLab
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="index.html#whatwedo" class="nav-mobile-link">What</a>
+      <a href="index.html#about" class="nav-mobile-link">Who</a>
+      <a href="decode-studio.html" class="nav-mobile-link">The Decode Studio</a>
+      <a href="from-the-field.html" class="nav-mobile-link">Blog</a>
+      <a href="https://app.decodecolab.com/login.html" target="_blank" rel="noopener noreferrer" class="nav-mobile-cta">
+        Enter the CoLab
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="cs-page">
+    <main class="cs-main">
+      <div class="cs-inner">
+
+        <div class="cs-logo-mark">
+          <svg width="64" height="56" viewBox="-3 -3 114 101" fill="none">
+            <circle cx="32.5" cy="62.5" r="29.5" stroke="#f58220" stroke-width="6" fill="none"/>
+            <rect x="45" y="0" width="60" height="60" rx="8" stroke="#1fb376" stroke-width="6" fill="none"/>
+          </svg>
+        </div>
+
+        <span class="cs-eyebrow">Coming soon</span>
+
+        <h1 class="cs-heading">CoLab is<br><span>on its way.</span></h1>
+
+        <p class="cs-body">We're still building it — and we want to build it with the right organisations. CoLab will bring together strategy, evidence and story into one connected platform that grows with you. If you'd like to be part of what's next, get in touch.</p>
+
+        <div class="cs-actions">
+          <a href="mailto:hello@decodecolab.com?subject=I'd like to know more about CoLab" class="cs-btn-primary">
+            Get in touch
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="decode-studio.html" class="cs-btn-secondary">
+            Start with Decode Studio
+          </a>
+        </div>
+
+        <div class="cs-divider"></div>
+
+        <div class="cs-coming">
+          <div class="cs-coming-item">
+            <span class="cs-coming-dot orange"></span>
+            Decode Studio
+          </div>
+          <div class="cs-coming-item">
+            <span class="cs-coming-dot green"></span>
+            Evaluation Lab
+          </div>
+          <div class="cs-coming-item">
+            <span class="cs-coming-dot green"></span>
+            Story Lab
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-shapes" aria-hidden="true">
+      <div class="fshape fshape-1"></div>
+      <div class="fshape fshape-2"></div>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <svg width="34" height="30" viewBox="-3 -3 114 101" fill="none">
+            <circle cx="32.5" cy="62.5" r="29.5" stroke="rgba(245,130,32,0.7)" stroke-width="6" fill="none"/>
+            <rect x="45" y="0" width="60" height="60" rx="8" stroke="rgba(31,179,118,0.7)" stroke-width="6" fill="none"/>
+          </svg>
+          <span>decodeCoLab</span>
+        </div>
+        <p class="footer-desc">Impact evaluation and facilitation for organisations doing work that matters. Based in Malawi, working globally.</p>
+        <a href="mailto:hello@decodecolab.com" class="footer-email">hello@decodecolab.com</a>
+      </div>
+      <div class="footer-right">
+        <a href="decode-studio.html" class="footer-platform-link">
+          Start with Decode Studio
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="footer-copy">&copy; <span id="year"></span> decodeCoLab by Bouchra Atkinson. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
