@@ -434,7 +434,7 @@
     .ds-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .ds-cta-note { font-size: 0.82rem; color: var(--muted); margin-top: 1.5rem; opacity: 0.6; }
 
-    /* ── Responsive ── */
+/* ── Responsive ── */
     @media (max-width: 960px) {
       .ds-steps-row {
         grid-template-columns: 1fr 1fr;
@@ -453,7 +453,14 @@
       .ds-btn-primary, .ds-btn-secondary { justify-content: center; width: 100%; max-width: 320px; }
       .ds-cta-actions { flex-direction: column; align-items: center; }
       div[style*="grid-template-columns: repeat(4, 1fr)"] {
-        grid-template-columns: 1fr 1fr !important;
+        grid-template-columns: 1fr !important;
+      }
+      div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+      .ds-pricing-pills {
+        flex-direction: row;
+        flex-wrap: wrap;
       }
     }
     @media (max-width: 560px) {
