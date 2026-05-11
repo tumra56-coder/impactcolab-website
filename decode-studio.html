@@ -17,8 +17,8 @@
     .ds-hero {
       background: var(--bg);
       background-image: url('decode-studio-compass.svg');
-      background-position: 98% 85%;
-      background-size: 25%;
+      background-position: 96% 85%;
+      background-size: 20%;
       background-repeat: no-repeat;
       padding: 0 var(--pad-x);
       min-height: 100vh;
@@ -544,20 +544,19 @@
   <!-- 1. Hero -->
   <section class="ds-hero">
 
-     <!-- Left shapes -->
-    <!-- Left shapes -->
-    <div style="position:absolute; top:0; left:0; width:400px; height:100%; pointer-events:none; overflow:hidden;">
-      <!-- Green rect top — bleeds off left edge -->
-      <div style="position:absolute; top:60px; left:-10px; width:160px; height:120px; border-radius:4px; background:#1fb376; opacity:0.12;"></div>
-      <!-- Orange large circle — centred in the panel -->
-      <div style="position:absolute; top:150px; left:20px; width:220px; height:220px; border-radius:50%; background:#f58220; opacity:0.08;"></div>
-      <!-- Green rect overlapping circle -->
-      <div style="position:absolute; top:220px; left:120px; width:140px; height:110px; border-radius:4px; background:#1fb376; opacity:0.13;"></div>
-      <!-- Orange rect lower — much softer -->
-      <div style="position:absolute; top:400px; left:30px; width:160px; height:120px; border-radius:4px; background:#f58220; opacity:0.09;"></div>
-      <!-- Green rect bottom right of panel -->
-      <div style="position:absolute; top:480px; left:160px; width:160px; height:110px; border-radius:4px; background:#1fb376; opacity:0.11;"></div>
-    </div>
+      <!-- Left shapes -->
+  <div style="position:absolute; top:0; left:0; width:500px; height:100%; pointer-events:none; overflow:hidden;">
+    <!-- Green rect top — sits higher -->
+    <div style="position:absolute; top:40px; left:40px; width:180px; height:140px; border-radius:4px; background:#1fb376; opacity:0.12;"></div>
+    <!-- Orange large circle — pushed further right and down -->
+    <div style="position:absolute; top:120px; left:80px; width:260px; height:260px; border-radius:50%; background:#f58220; opacity:0.07;"></div>
+    <!-- Green rect mid — sits over circle, further right -->
+    <div style="position:absolute; top:240px; left:200px; width:160px; height:130px; border-radius:4px; background:#1fb376; opacity:0.12;"></div>
+    <!-- Orange rect lower left -->
+    <div style="position:absolute; top:450px; left:40px; width:180px; height:130px; border-radius:4px; background:#f58220; opacity:0.08;"></div>
+    <!-- Green rect bottom — further right -->
+    <div style="position:absolute; top:560px; left:220px; width:180px; height:120px; border-radius:4px; background:#1fb376; opacity:0.1;"></div>
+  </div>
     
       <!-- Compass lower right -->
       <img src="decode-studio-left.svg" alt="" aria-hidden="true" style="position:absolute; bottom:20px; right:20px; width:180px; opacity:0.35; pointer-events:none;"/>
